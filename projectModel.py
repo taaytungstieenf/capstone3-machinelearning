@@ -5,7 +5,7 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, roc_auc_score
 
 # 1. Load dataset
-df = pd.read_csv("diabetes_dataset.csv")
+df = pd.read_csv("xgb_dataset.csv")
 
 # 2. Kiểm tra và xử lý dữ liệu thiếu (nếu có)
 if df.isnull().sum().sum() > 0:

@@ -7,7 +7,7 @@ from sklearn.metrics import accuracy_score, roc_auc_score
 import matplotlib.pyplot as plt
 
 # 1. Load dataset
-df = pd.read_csv("diabetes_dataset.csv")
+df = pd.read_csv("xgb_dataset.csv")
 
 # 2. Encode categorical variables
 label_encoders = {}
