@@ -1,11 +1,12 @@
 import pandas as pd
 import xgboost as xgb
+
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, roc_auc_score
 
 # 1. Load dataset
-df = pd.read_csv("xgb_dataset.csv")
+df = pd.read_csv("xgb_diabetes_dataset.csv")
 
 # 2. Kiểm tra và xử lý dữ liệu thiếu (nếu có)
 if df.isnull().sum().sum() > 0:

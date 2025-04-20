@@ -9,11 +9,8 @@
       <change beforePath="$PROJECT_DIR$/boosting_CatBoost.py" beforeDir="false" afterPath="$PROJECT_DIR$/boosting_CatBoost.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boosting_LightGBM.py" beforeDir="false" afterPath="$PROJECT_DIR$/boosting_LightGBM.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boosting_XGBoost.py" beforeDir="false" afterPath="$PROJECT_DIR$/boosting_XGBoost.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diabetes_dataset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/xgb_dataset.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_UI.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectAPI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xgb_requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xgb_dataset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/xgb_diabetes_dataset.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,44 +35,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Python.CatBoostClassifier_model.executor&quot;: &quot;Run&quot;,
-    &quot;Python.boosting_CatBoost.executor&quot;: &quot;Run&quot;,
-    &quot;Python.boosting_LightGBM.executor&quot;: &quot;Run&quot;,
-    &quot;Python.boosting_XGBoost.executor&quot;: &quot;Run&quot;,
-    &quot;Python.decisiontree.executor&quot;: &quot;Run&quot;,
-    &quot;Python.decisiontree_model.executor&quot;: &quot;Run&quot;,
-    &quot;Python.logisticregression_model.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.model.executor&quot;: &quot;Run&quot;,
-    &quot;Python.orthers_KNN.executor&quot;: &quot;Run&quot;,
-    &quot;Python.orthers_LogisticRegression.executor&quot;: &quot;Run&quot;,
-    &quot;Python.orthers_NaiveBayes.executor&quot;: &quot;Run&quot;,
-    &quot;Python.orthers_SVM.executor&quot;: &quot;Run&quot;,
-    &quot;Python.project_app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.save_model.executor&quot;: &quot;Run&quot;,
-    &quot;Python.xgboost.executor&quot;: &quot;Run&quot;,
-    &quot;Python.xgboost_model.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Python.CatBoostClassifier_model.executor": "Run",
+    "Python.boosting_CatBoost.executor": "Run",
+    "Python.boosting_LightGBM.executor": "Run",
+    "Python.boosting_XGBoost.executor": "Run",
+    "Python.decisiontree.executor": "Run",
+    "Python.decisiontree_model.executor": "Run",
+    "Python.logisticregression_model.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.model.executor": "Run",
+    "Python.orthers_KNN.executor": "Run",
+    "Python.orthers_LogisticRegression.executor": "Run",
+    "Python.orthers_NaiveBayes.executor": "Run",
+    "Python.orthers_SVM.executor": "Run",
+    "Python.projectModel.executor": "Run",
+    "Python.project_app.executor": "Run",
+    "Python.save_model.executor": "Run",
+    "Python.xgboost.executor": "Run",
+    "Python.xgboost_model.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;TEXT&quot;,
-      &quot;PLAIN_TEXT&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT",
+      "PLAIN_TEXT"
     ]
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -104,6 +102,7 @@
       <workItem from="1745053701851" duration="759000" />
       <workItem from="1745116931460" duration="3939000" />
       <workItem from="1745126781821" duration="1165000" />
+      <workItem from="1745127967038" duration="730000" />
     </task>
     <servers />
   </component>
@@ -121,6 +120,7 @@
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$main.coverage" NAME="main Coverage Results" MODIFIED="1744562913231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$orthers_KNN.coverage" NAME="orthers_KNN Coverage Results" MODIFIED="1745031879667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$orthers_LogisticRegression.coverage" NAME="orthers_LogisticRegression Coverage Results" MODIFIED="1745031933936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/capstone3_machinelearning$projectModel.coverage" NAME="projectModel Coverage Results" MODIFIED="1745128244153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$decisiontree_model.coverage" NAME="decisiontree_model Coverage Results" MODIFIED="1744563337347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$logisticregression_model.coverage" NAME="logisticregression_model Coverage Results" MODIFIED="1744975917238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$xgboost.coverage" NAME="xgboost Coverage Results" MODIFIED="1744395634825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
