@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b564f29-4f79-45da-bd54-00d80daa3421" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/MAIN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boosting_CatBoost.py" beforeDir="false" afterPath="$PROJECT_DIR$/boosting_CatBoost.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boosting_LightGBM.py" beforeDir="false" afterPath="$PROJECT_DIR$/boosting_LightGBM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boosting_XGBoost.py" beforeDir="false" afterPath="$PROJECT_DIR$/boosting_XGBoost.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xgb_dataset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/xgb_diabetes_dataset.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +35,7 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Python.CatBoostClassifier_model.executor": "Run",
+    "Python.MAIN.executor": "Run",
     "Python.boosting_CatBoost.executor": "Run",
     "Python.boosting_LightGBM.executor": "Run",
     "Python.boosting_XGBoost.executor": "Run",
@@ -102,7 +99,7 @@
       <workItem from="1745053701851" duration="759000" />
       <workItem from="1745116931460" duration="3939000" />
       <workItem from="1745126781821" duration="1165000" />
-      <workItem from="1745127967038" duration="730000" />
+      <workItem from="1745127967038" duration="1808000" />
     </task>
     <servers />
   </component>
@@ -124,6 +121,7 @@
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$decisiontree_model.coverage" NAME="decisiontree_model Coverage Results" MODIFIED="1744563337347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$logisticregression_model.coverage" NAME="logisticregression_model Coverage Results" MODIFIED="1744975917238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$xgboost.coverage" NAME="xgboost Coverage Results" MODIFIED="1744395634825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/capstone3_machinelearning$MAIN.coverage" NAME="MAIN Coverage Results" MODIFIED="1745130194207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$orthers_SVM.coverage" NAME="orthers_SVM Coverage Results" MODIFIED="1745032092724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$boosting_LightGBM.coverage" NAME="boosting_LightGBM Coverage Results" MODIFIED="1745024593546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$decisiontree.coverage" NAME="decisiontree Coverage Results" MODIFIED="1744395474122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
