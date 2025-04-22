@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b564f29-4f79-45da-bd54-00d80daa3421" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boosting_CatBoost.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_comparisons/boosting_CatBoost.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boosting_LightGBM.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_comparisons/boosting_LightGBM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boosting_XGBoost.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_comparisons/boosting_XGBoost.py" afterDir="false" />
-    </list>
+    <list default="true" id="1b564f29-4f79-45da-bd54-00d80daa3421" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,7 +105,7 @@
       <workItem from="1745155032660" duration="1182000" />
       <workItem from="1745258519946" duration="348000" />
       <workItem from="1745259049431" duration="9000" />
-      <workItem from="1745332705100" duration="1553000" />
+      <workItem from="1745332705100" duration="1921000" />
     </task>
     <servers />
   </component>
