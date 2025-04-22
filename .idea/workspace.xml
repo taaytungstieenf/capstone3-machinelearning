@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1b564f29-4f79-45da-bd54-00d80daa3421" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boosting_CatBoost.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_comparisons/boosting_CatBoost.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boosting_LightGBM.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_comparisons/boosting_LightGBM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boosting_XGBoost.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_comparisons/boosting_XGBoost.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,46 +33,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Python.CatBoostClassifier_model.executor": "Run",
-    "Python.MAIN.executor": "Run",
-    "Python.boosting_CatBoost.executor": "Run",
-    "Python.boosting_LightGBM.executor": "Run",
-    "Python.boosting_XGBoost.executor": "Run",
-    "Python.decisiontree.executor": "Run",
-    "Python.decisiontree_model.executor": "Run",
-    "Python.logisticregression_model.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.model.executor": "Run",
-    "Python.orthers_KNN.executor": "Run",
-    "Python.orthers_LogisticRegression.executor": "Run",
-    "Python.orthers_NaiveBayes.executor": "Run",
-    "Python.orthers_SVM.executor": "Run",
-    "Python.projectModel.executor": "Run",
-    "Python.project_app.executor": "Run",
-    "Python.save_model.executor": "Run",
-    "Python.xgboost.executor": "Run",
-    "Python.xgboost_model.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "oldVers",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Python.CatBoostClassifier_model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.MAIN.executor&quot;: &quot;Run&quot;,
+    &quot;Python.boosting_CatBoost.executor&quot;: &quot;Run&quot;,
+    &quot;Python.boosting_LightGBM.executor&quot;: &quot;Run&quot;,
+    &quot;Python.boosting_XGBoost.executor&quot;: &quot;Run&quot;,
+    &quot;Python.decisiontree.executor&quot;: &quot;Run&quot;,
+    &quot;Python.decisiontree_model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.logisticregression_model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.orthers_KNN.executor&quot;: &quot;Run&quot;,
+    &quot;Python.orthers_LogisticRegression.executor&quot;: &quot;Run&quot;,
+    &quot;Python.orthers_NaiveBayes.executor&quot;: &quot;Run&quot;,
+    &quot;Python.orthers_SVM.executor&quot;: &quot;Run&quot;,
+    &quot;Python.projectModel.executor&quot;: &quot;Run&quot;,
+    &quot;Python.project_app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.save_model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.xgboost.executor&quot;: &quot;Run&quot;,
+    &quot;Python.xgboost_model.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;oldVers&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "TEXT",
-      "PLAIN_TEXT"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TEXT&quot;,
+      &quot;PLAIN_TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/model_comparisons" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -98,7 +106,11 @@
       <workItem from="1745053701851" duration="759000" />
       <workItem from="1745116931460" duration="3939000" />
       <workItem from="1745126781821" duration="1165000" />
-      <workItem from="1745127967038" duration="2870000" />
+      <workItem from="1745127967038" duration="5614000" />
+      <workItem from="1745155032660" duration="1182000" />
+      <workItem from="1745258519946" duration="348000" />
+      <workItem from="1745259049431" duration="9000" />
+      <workItem from="1745332705100" duration="1553000" />
     </task>
     <servers />
   </component>
