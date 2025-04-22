@@ -1,26 +1,21 @@
 import streamlit as st
 import requests
 
-# Cấu hình tiêu đề UI
 st.title("🩺 Ứng dụng Dự đoán Bệnh Tiểu Đường")
-
 st.markdown("Vui lòng nhập các thông tin sau:")
 
-# Nhập dữ liệu người dùng
 age = st.number_input("Tuổi", min_value=0, max_value=120, value=30)
 bmi = st.number_input("BMI", min_value=10.0, max_value=60.0, value=22.5)
-gender = st.selectbox("Giới tính", ["Nam", "Nữ"])  # giả sử Nam=1, Nữ=0
-smoking_history = st.selectbox("Tiền sử hút thuốc", ["Không", "Trung bình", "Nặng"])  # encode sau
+gender = st.selectbox("Giới tính", ["Nam", "Nữ"])
+smoking_history = st.selectbox("Tiền sử hút thuốc", ["Không", "Trung bình", "Nặng"])
 hypertension = st.selectbox("Tăng huyết áp", ["Không", "Có"])
 heart_disease = st.selectbox("Bệnh tim", ["Không", "Có"])
 glucose = st.number_input("Mức đường huyết (mg/dL)", min_value=50.0, max_value=400.0, value=120.0)
 hba1c = st.number_input("HbA1c (%)", min_value=3.0, max_value=15.0, value=5.5)
 
-# Map lại theo mô hình đã encode
 gender_map = {"Nam": 1, "Nữ": 0}
 smoke_map = {"Không": 0, "Trung bình": 1, "Nặng": 2}
 
-# Nút gửi dữ liệu
 if st.button("📊 Dự đoán"):
     input_data = {
         "age": age,
@@ -34,11 +29,9 @@ if st.button("📊 Dự đoán"):
     }
 
     try:
-        # Gửi POST request tới Flask API
         response = requests.post("http://localhost:5000/predict", json=input_data)
         result = response.json()
 
-        # Hiển thị kết quả
         if "diabetes_prediction" in result:
             pred = result["diabetes_prediction"]
             if pred == 1:
