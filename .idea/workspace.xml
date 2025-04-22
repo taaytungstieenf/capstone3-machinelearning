@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b564f29-4f79-45da-bd54-00d80daa3421" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MAIN.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_comparisons/boosting_CatBoost.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_comparisons/boosting_CatBoost.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_comparisons/boosting_LightGBM.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_comparisons/boosting_LightGBM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_comparisons/boosting_XGBoost.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_comparisons/boosting_XGBoost.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectAPI.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectModel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectUI.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xgb_diabetes_dataset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/xgb_diabetes_dataset.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xgb_diabetes_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/xgb_diabetes_model.pkl" afterDir="false" />
-    </list>
+    <list default="true" id="1b564f29-4f79-45da-bd54-00d80daa3421" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -139,7 +125,7 @@
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$orthers_KNN.coverage" NAME="orthers_KNN Coverage Results" MODIFIED="1745031879667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$orthers_LogisticRegression.coverage" NAME="orthers_LogisticRegression Coverage Results" MODIFIED="1745031933936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$projectModel.coverage" NAME="projectModel Coverage Results" MODIFIED="1745128244153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/capstone3_machinelearning$main.coverage" NAME="main Coverage Results" MODIFIED="1745335671364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/capstone3_machinelearning$main.coverage" NAME="main Coverage Results" MODIFIED="1745335755011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$decisiontree_model.coverage" NAME="decisiontree_model Coverage Results" MODIFIED="1744563337347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$logisticregression_model.coverage" NAME="logisticregression_model Coverage Results" MODIFIED="1744975917238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$xgboost.coverage" NAME="xgboost Coverage Results" MODIFIED="1744395634825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
