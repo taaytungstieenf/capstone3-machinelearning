@@ -6,3 +6,4 @@ lightgbm
 catboost
 matplotlib
 flask
+mysql-connector-python
