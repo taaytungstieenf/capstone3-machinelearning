@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1b564f29-4f79-45da-bd54-00d80daa3421" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/xgb_diabetes_dataset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/diabetes_dataset.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_comparisons/CatBoost.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_comparisons/CatBoost.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_comparisons/LightGBM.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_comparisons/LightGBM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_comparisons/XGBoost.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_comparisons/XGBoost.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/xgb_diabetes_model.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +145,7 @@
       <workItem from="1745259049431" duration="9000" />
       <workItem from="1745332705100" duration="1921000" />
       <workItem from="1745390803897" duration="683000" />
-      <workItem from="1745400806632" duration="3226000" />
+      <workItem from="1745400806632" duration="3502000" />
     </task>
     <servers />
   </component>
