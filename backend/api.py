@@ -4,7 +4,7 @@ import numpy as np
 import os
 
 app = Flask(__name__)
-model_path = os.path.join("models", "xgb_diabetes_model.pkl")
+model_path = os.path.join("models", "xgb_model.pkl")
 model = joblib.load(model_path)
 
 @app.route("/predict", methods=["POST"])

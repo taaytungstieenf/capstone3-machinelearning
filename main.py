@@ -1,7 +1,6 @@
 import multiprocessing
 import subprocess
 import time
-import os
 
 def run_api():
     subprocess.run(["python", "backend/api.py"])

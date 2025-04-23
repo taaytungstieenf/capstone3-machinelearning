@@ -7,7 +7,7 @@ from sklearn.metrics import accuracy_score, roc_auc_score
 import matplotlib.pyplot as plt
 
 # 1. Load dataset
-df = pd.read_csv("../data/xgb_diabetes_dataset.csv")
+df = pd.read_csv("../data/diabetes_dataset.csv")
 
 # 2. Encode categorical variables (e.g., 'Male', 'Female' → 0,1)
 label_encoders = {}
@@ -37,7 +37,7 @@ y_pred_proba = model.predict_proba(X_test)[:, 1]  # Probabilities for AUC
 # 7. Evaluate performance
 accuracy = accuracy_score(y_test, y_pred)
 auc = roc_auc_score(y_test, y_pred_proba)
-
+                                                        
 print(f'Accuracy: {accuracy:.4f}')
 print(f'AUC: {auc:.4f}')
 
