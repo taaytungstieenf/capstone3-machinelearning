@@ -18,4 +18,3 @@ if __name__ == "__main__":
 
     api_process.join()
     ui_process.join()
-

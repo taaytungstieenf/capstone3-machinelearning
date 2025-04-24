@@ -1,21 +1,19 @@
-# ui.py
 import streamlit as st
 import requests
 import mysql.connector
 
-# Cấu hình kết nối MySQL
+from backend.db import clear_predictions  # Import để dùng nút xóa
+
 DB_CONFIG = {
-    'host': 'localhost',  # Địa chỉ máy chủ MySQL
-    'user': 'root',  # Tên người dùng MySQL
-    'password': '246357',  # Mật khẩu MySQL
-    'database': 'diabetesDB',  # Tên cơ sở dữ liệu
+    'host': 'localhost',
+    'user': 'root',
+    'password': '246357',
+    'database': 'diabetesDB',
 }
 
-# Hàm kết nối MySQL
 def get_db_connection():
     return mysql.connector.connect(**DB_CONFIG)
 
-# Hàm lấy lịch sử dự đoán từ MySQL
 def get_predictions_from_db():
     conn = get_db_connection()
     cursor = conn.cursor()
@@ -24,7 +22,6 @@ def get_predictions_from_db():
     conn.close()
     return predictions
 
-# Hàm hiển thị lịch sử dự đoán
 def display_predictions(predictions):
     st.subheader("Lịch sử dự đoán gần đây")
     if len(predictions) == 0:
@@ -33,11 +30,9 @@ def display_predictions(predictions):
         for pred in predictions:
             st.write(f"ID: {pred[0]}, Tuổi: {pred[2]}, Giới tính: {'Nam' if pred[1] == 1 else 'Nữ'}, BMI: {pred[6]}, Dự đoán: {'Có nguy cơ' if pred[9] == 1 else 'Không có nguy cơ'}, Thời gian: {pred[10]}")
 
-# Cấu hình giao diện
 st.set_page_config(page_title="Dự đoán Tiểu Đường", page_icon="🩺", layout="centered")
 
-st.markdown(
-    """
+st.markdown("""
     <style>
         .big-font {
             font-size:24px !important;
@@ -49,9 +44,7 @@ st.markdown(
             color: gray;
         }
     </style>
-    """,
-    unsafe_allow_html=True
-)
+""", unsafe_allow_html=True)
 
 st.markdown("<h1 class='big-font'>🩺 Ứng dụng Dự đoán Bệnh Tiểu Đường</h1>", unsafe_allow_html=True)
 st.markdown("#### Hãy nhập thông tin sức khỏe của bạn để hệ thống dự đoán nguy cơ mắc bệnh tiểu đường.")
@@ -108,3 +101,11 @@ if submit_btn:
 # Hiển thị các dự đoán gần đây từ database
 predictions = get_predictions_from_db()
 display_predictions(predictions)
+
+st.markdown("---")
+if st.button("🗑️ Xóa tất cả lịch sử dự đoán"):
+    try:
+        clear_predictions()
+        st.success("✅ Đã xóa toàn bộ lịch sử dự đoán.")
+    except Exception as e:
+        st.error(f"❌ Không thể xóa dữ liệu: {e}")

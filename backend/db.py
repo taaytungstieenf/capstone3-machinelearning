@@ -1,21 +1,18 @@
-# database.py
 import mysql.connector
 from datetime import datetime
 import os
 
 # Cấu hình kết nối MySQL
 DB_CONFIG = {
-    'host': 'localhost',  # Địa chỉ máy chủ MySQL
-    'user': 'root',  # Tên người dùng MySQL
-    'password': '246357',  # Mật khẩu MySQL
-    'database': 'diabetesDB',  # Tên cơ sở dữ liệu
+    'host': 'localhost',
+    'user': 'root',
+    'password': '246357',
+    'database': 'diabetesDB',
 }
 
-# Hàm tạo kết nối tới MySQL
 def get_db_connection():
     return mysql.connector.connect(**DB_CONFIG)
 
-# Tạo bảng nếu chưa có
 def init_db():
     conn = get_db_connection()
     cursor = conn.cursor()
@@ -37,7 +34,6 @@ def init_db():
     conn.commit()
     conn.close()
 
-# Lưu bản ghi dự đoán
 def save_prediction(data: dict, prediction: int):
     conn = get_db_connection()
     cursor = conn.cursor()
@@ -55,5 +51,11 @@ def save_prediction(data: dict, prediction: int):
     conn.commit()
     conn.close()
 
-# Gọi 1 lần khi khởi chạy để đảm bảo bảng được tạo
+def clear_predictions():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM predictions")
+    conn.commit()
+    conn.close()
+
 init_db()
