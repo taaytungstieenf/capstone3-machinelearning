@@ -35,7 +35,6 @@ def delete_all_predictions():
     conn.close()
 
 def display_predictions(predictions, st):
-    st.subheader("🧾 Lịch sử dự đoán gần đây")
 
     if not predictions:
         st.write("Không có dữ liệu dự đoán.")

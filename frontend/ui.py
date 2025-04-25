@@ -3,7 +3,7 @@ import requests
 from datetime import date
 from utils.funcs import get_predictions_from_db, delete_all_predictions, display_predictions
 
-st.set_page_config(page_title="Dự đoán Tiểu Đường", page_icon="🩺", layout="wide")
+st.set_page_config(page_title="Dự đoán Tiểu Đường", page_icon="🧬", layout="wide")
 
 # CSS
 st.markdown("""
@@ -30,7 +30,7 @@ st.markdown(
         }
     </style>
     <div class="app-title">
-        <h1>🩺 Ứng dụng Dự đoán Bệnh Tiểu Đường</h1>
+        <h1>Ứng dụng Dự đoán Bệnh Tiểu Đường</h1>
     </div>
     """,
     unsafe_allow_html=True
@@ -39,12 +39,11 @@ st.markdown(
 # --- Form nhập liệu ---
 col_left, col_right = st.columns([1.2, 1])
 with col_left:
-    st.markdown("#### 👤 Nhập thông tin cá nhân")
+    st.markdown("<h3 style='text-align: center;'>🧾 Nhập thông tin cá nhân</h3>", unsafe_allow_html=True)
     with st.form("patient_form"):
         name = st.text_input("👤 Họ tên")
         dob = st.date_input("📅 Ngày sinh", value=date(1990, 1, 1),
                             min_value=date(1900, 1, 1), max_value=date.today())
-        st.markdown("#### 🧬 Thông tin sức khỏe")
         col1, col2 = st.columns(2)
         with col1:
             age = st.number_input("👵 Tuổi", 0, 120, 30)
@@ -94,8 +93,11 @@ with col_left:
 
 # --- Bên phải: lịch sử & xoá ---
 with col_right:
-    predictions = get_predictions_from_db()
-    display_predictions(predictions, st)
+    st.markdown("<h3 style='text-align: center;'>🛢️ Lịch sử dự đoán gần đây</h3>", unsafe_allow_html=True)
+
+    with st.expander("Nhấn để xem"):
+        predictions = get_predictions_from_db()
+        display_predictions(predictions, st)
 
     if "confirm_delete" not in st.session_state:
         st.session_state.confirm_delete = False
