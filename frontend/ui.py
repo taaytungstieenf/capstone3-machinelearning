@@ -1,6 +1,10 @@
 import streamlit as st
 import requests
 import mysql.connector
+from datetime import date
+import sys
+sys.path.append("..")  # Cho phép import từ thư mục backend
+from backend.db import delete_all_predictions  # Đã thêm import
 
 DB_CONFIG = {
     'host': 'localhost',
@@ -65,7 +69,12 @@ st.markdown("#### 👤 Nhập thông tin cá nhân")
 
 with st.form("patient_form"):
     name = st.text_input("👤 Họ tên")
-    dob = st.date_input("📅 Ngày sinh")
+    dob = st.date_input(
+        "Date of Birth",
+        value=date(1990, 1, 1),
+        min_value=date(1900, 1, 1),
+        max_value=date.today()
+    )
     st.markdown("#### 🧬 Thông tin sức khỏe")
 
     col1, col2 = st.columns(2)
@@ -118,6 +127,14 @@ if submit_btn:
             except Exception as e:
                 st.error(f"❌ Lỗi kết nối đến API: {e}")
 
-# Hiển thị dự đoán gần đây
+# Hiển thị lịch sử và xoá nếu cần
 predictions = get_predictions_from_db()
 display_predictions(predictions)
+
+st.markdown("---")
+if st.button("🗑️ Xoá toàn bộ lịch sử dự đoán"):
+    try:
+        delete_all_predictions()
+        st.success("✅ Đã xoá toàn bộ lịch sử dự đoán.")
+    except Exception as e:
+        st.error(f"❌ Lỗi khi xoá: {e}")

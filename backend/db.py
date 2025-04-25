@@ -78,4 +78,12 @@ def save_prediction(data: dict, prediction: int):
     conn.commit()
     conn.close()
 
+def delete_all_predictions():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM predictions")
+    conn.commit()
+    conn.close()
+
+# Khởi tạo DB khi import file
 init_db()
