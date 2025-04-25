@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import joblib
 import numpy as np
 import os
+
 from db import save_prediction  # Thêm dòng này
 
 app = Flask(__name__)
@@ -20,6 +21,8 @@ def predict():
         heart_disease = int(data["heart_disease"])
         blood_glucose_level = float(data["blood_glucose_level"])
         HbA1c_level = float(data["HbA1c_level"])
+        name = data["name"]
+        dob = data["dob"]
 
         input_data = np.array([[gender, age, hypertension, heart_disease, smoking_history,
                                 bmi, HbA1c_level, blood_glucose_level]])
