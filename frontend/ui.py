@@ -132,9 +132,25 @@ predictions = get_predictions_from_db()
 display_predictions(predictions)
 
 st.markdown("---")
-if st.button("🗑️ Xoá toàn bộ lịch sử dự đoán"):
-    try:
-        delete_all_predictions()
-        st.success("✅ Đã xoá toàn bộ lịch sử dự đoán.")
-    except Exception as e:
-        st.error(f"❌ Lỗi khi xoá: {e}")
+if "confirm_delete" not in st.session_state:
+    st.session_state.confirm_delete = False
+
+if not st.session_state.confirm_delete:
+    if st.button("🗑️ Xoá toàn bộ lịch sử dự đoán"):
+        st.session_state.confirm_delete = True
+else:
+    st.warning("Bạn có chắc chắn muốn xoá toàn bộ lịch sử? Hành động này không thể hoàn tác.")
+    col_confirm, col_cancel = st.columns([1, 1])
+    with col_confirm:
+        if st.button("✅ Đồng ý xoá"):
+            try:
+                delete_all_predictions()
+                st.success("✅ Đã xoá toàn bộ lịch sử dự đoán.")
+            except Exception as e:
+                st.error(f"❌ Lỗi khi xoá: {e}")
+            st.session_state.confirm_delete = False
+    with col_cancel:
+        if st.button("❌ Huỷ bỏ"):
+            st.info("Đã huỷ xoá lịch sử.")
+            st.session_state.confirm_delete = False
+
