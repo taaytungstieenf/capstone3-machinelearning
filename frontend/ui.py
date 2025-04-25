@@ -97,7 +97,6 @@ with col_right:
     predictions = get_predictions_from_db()
     display_predictions(predictions, st)
 
-    st.markdown("---")
     if "confirm_delete" not in st.session_state:
         st.session_state.confirm_delete = False
 
