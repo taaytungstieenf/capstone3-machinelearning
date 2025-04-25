@@ -11,9 +11,30 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Tiêu đề
-st.markdown("""
-<div class="app-title"><h1>🩺 Ứng dụng Dự đoán Bệnh Tiểu Đường</h1></div>
-""", unsafe_allow_html=True)
+st.markdown(
+    """
+    <style>
+        .app-title {
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 30px;
+        }
+        .app-title h1 {
+            font-size: 42px;
+            font-weight: bold;
+            background: -webkit-linear-gradient(left, #2C3E50, #3498DB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            margin: 0;
+        }
+    </style>
+    <div class="app-title">
+        <h1>🩺 Ứng dụng Dự đoán Bệnh Tiểu Đường</h1>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 # --- Form nhập liệu ---
 col_left, col_right = st.columns([1.2, 1])
