@@ -36,18 +36,37 @@ def delete_all_predictions():
     conn.commit()
     conn.close()
 
+
 def display_predictions(predictions):
     st.subheader("🧾 Lịch sử dự đoán gần đây")
+
     if not predictions:
         st.write("Không có dữ liệu dự đoán.")
     else:
         for pred in predictions:
-            st.write(f"""
-            👤 Tên: {pred[1]} | 🎂 Ngày sinh: {pred[2]}  
-            🧓 Tuổi: {pred[3]} | ⚧️ Giới tính: {'Nam' if pred[4] == 1 else 'Nữ'} | ⚖️ BMI: {pred[5]}  
-            🩸 Glucose: {pred[6]} | HbA1c: {pred[7]}  
-            📊 Kết quả: {'🚨 Có nguy cơ' if pred[8] == 1 else '✅ Không có nguy cơ'} | 🕒 {pred[9]}
-            """)
+            # Chia thành các cột
+            col1, col2, col3, col4 = st.columns([2, 1, 2, 2])
+
+            with col1:
+                st.write(f"👤 **Tên:** {pred[1]}")
+                st.write(f"🎂 **Ngày sinh:** {pred[2]}")
+
+            with col2:
+                st.write(f"🧓 **Tuổi:** {pred[3]}")
+                st.write(f"⚧️ **Giới tính:** {'Nam' if pred[4] == 1 else 'Nữ'}")
+
+            with col3:
+                st.write(f"⚖️ **BMI:** {pred[5]}")
+                st.write(f"🩸 **Glucose:** {pred[6]}")
+
+            with col4:
+                st.write(f"🧪 **HbA1c:** {pred[7]}")
+                # Thêm trạng thái dự đoán
+                result = '🚨 Có nguy cơ' if pred[8] == 1 else '✅ Không có nguy cơ'
+                st.write(f"📊 **Kết quả:** {result}")
+
+            st.write(f"🕒 **Thời gian:** {pred[9]}")
+            st.markdown("---")
 
 st.set_page_config(page_title="Dự đoán Tiểu Đường", page_icon="🩺", layout="wide")
 
