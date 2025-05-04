@@ -1,6 +1,7 @@
 import mysql.connector
 from datetime import date
 
+# Tạo 1 dictionary gồm các thông tin để đẩy vào hàm kết nối với database
 DB_CONFIG = {
     'host': 'localhost',
     'user': 'root',
@@ -8,9 +9,11 @@ DB_CONFIG = {
     'database': 'diabetesDB',
 }
 
+# Hàm tạo kết nối với database
 def get_db_connection():
     return mysql.connector.connect(**DB_CONFIG)
 
+# Hàm in ra màn hình lịch sử của 10 dự đoán gần nhất
 def get_predictions_from_db():
     conn = get_db_connection()
     cursor = conn.cursor()
@@ -22,10 +25,12 @@ def get_predictions_from_db():
         ORDER BY p.timestamp DESC
         LIMIT 10
     ''')
+
     predictions = cursor.fetchall()
     conn.close()
     return predictions
 
+# Hàm xóa sạch lịch sử dự đoán, xóa bảng `predictions` và `pateients`
 def delete_all_predictions():
     conn = get_db_connection()
     cursor = conn.cursor()
@@ -34,6 +39,7 @@ def delete_all_predictions():
     conn.commit()
     conn.close()
 
+# Hàm hiển thị kết quả dự đoán
 def display_predictions(predictions, st):
 
     if not predictions:

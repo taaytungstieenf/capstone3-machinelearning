@@ -7,3 +7,4 @@ catboost
 matplotlib
 flask
 mysql-connector-python
+bcrypt

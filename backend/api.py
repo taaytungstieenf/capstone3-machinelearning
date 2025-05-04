@@ -3,8 +3,9 @@ import joblib
 import numpy as np
 import os
 
-from db import save_prediction  # Thêm dòng này
+from db import save_prediction
 
+#
 app = Flask(__name__)
 model_path = os.path.join("models", "xgb_model.pkl")
 model = joblib.load(model_path)
