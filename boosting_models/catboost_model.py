@@ -1,19 +1,20 @@
 import pandas as pd
 import numpy as np
-import xgboost as xgb
+from catboost import CatBoostClassifier, Pool  # THAY ĐỔI: Dùng CatBoost
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score, roc_auc_score
 import matplotlib.pyplot as plt
 import joblib
-import os  # NEW: to create path
+import os
 
 # 1. Load dataset
-df = pd.read_csv("../data/diabetes_dataset.csv")
+df = pd.read_csv("../diabetes_dataset.csv")
 
 # 2. Encode categorical variables
 label_encoders = {}
 categorical_cols = ['gender', 'smoking_history']
+
 for col in categorical_cols:
     le = LabelEncoder()
     df[col] = le.fit_transform(df[col])
@@ -28,8 +29,8 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
 )
 
-# 5. Train model
-model = xgb.XGBClassifier(eval_metric='logloss')
+# 5. Train model using CatBoost
+model = CatBoostClassifier(verbose=0)  # silent training
 model.fit(X_train, y_train)
 
 # 6. Evaluation
@@ -43,18 +44,23 @@ print(f'Accuracy: {accuracy:.4f}')
 print(f'AUC: {auc:.4f}')
 
 # 7. Feature importance plot
-xgb.plot_importance(model)
+feature_importances = model.get_feature_importance()
+feature_names = X.columns
+
+plt.figure(figsize=(10, 6))
+plt.barh(feature_names, feature_importances)
+plt.xlabel("Importance")
 plt.title("Feature Importance")
 plt.tight_layout()
 plt.show()
 
-# 8. Save model and encoders (one level up to /models)
+# 8. Save model and encoders
 os.makedirs(os.path.join("..", "models"), exist_ok=True)
 
-model_output_path = os.path.join("..", "models", "xgb_model.pkl")
-encoders_output_path = os.path.join("..", "models", "label_encoders.pkl")
+model_output_path = os.path.join("models", "catboost_model.cbm")
+encoders_output_path = os.path.join("models", "catboost_label_encoders.pkl")
 
-joblib.dump(model, model_output_path)
+model.save_model(model_output_path)
 joblib.dump(label_encoders, encoders_output_path)
 
 print(f"Model saved to: {model_output_path}")

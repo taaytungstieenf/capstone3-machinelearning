@@ -3,11 +3,11 @@ import joblib
 import numpy as np
 import os
 
-from db import save_prediction
+from database.database_functions import save_prediction
 
 #
 app = Flask(__name__)
-model_path = os.path.join("models", "xgb_model.pkl")
+model_path = os.path.join("boosting_models/models", "xgboost_model.pkl")
 model = joblib.load(model_path)
 
 @app.route("/predict", methods=["POST"])

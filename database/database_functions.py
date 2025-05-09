@@ -2,12 +2,7 @@ import mysql.connector
 from datetime import datetime
 import os
 
-DB_CONFIG = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': '246357',
-    'database': 'diabetesDB',
-}
+from .database_config import DB_CONFIG # Import DB_CONFIG từ file database_config.py cùng thư mục
 
 def get_db_connection():
     return mysql.connector.connect(**DB_CONFIG)
@@ -39,15 +34,6 @@ def init_db():
             prediction INT,
             timestamp DATETIME,
             FOREIGN KEY (patient_id) REFERENCES patients(id)
-        )
-    ''')
-
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS users (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            username VARCHAR(255) UNIQUE NOT NULL,
-            password VARCHAR(255) NOT NULL,
-            email VARCHAR(255) NOT NULL
         )
     ''')
 
@@ -87,10 +73,26 @@ def save_prediction(data: dict, prediction: int):
     conn.commit()
     conn.close()
 
+def get_predictions_from_db():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('''
+        SELECT p.id, pt.name, pt.dob, p.age, p.gender, p.bmi, p.blood_glucose_level,
+               p.HbA1c_level, p.prediction, p.timestamp
+        FROM predictions p
+        JOIN patients pt ON p.patient_id = pt.id
+        ORDER BY p.timestamp DESC
+        LIMIT 10
+    ''')
+    predictions = cursor.fetchall()
+    conn.close()
+    return predictions
+
 def delete_all_predictions():
     conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute("DELETE FROM predictions")
+    cursor.execute("DELETE FROM patients")
     conn.commit()
     conn.close()
 

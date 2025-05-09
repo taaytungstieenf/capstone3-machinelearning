@@ -1,7 +1,8 @@
 import streamlit as st
 import requests
 from datetime import date
-from utils.funcs import get_predictions_from_db, delete_all_predictions, display_predictions
+from database.database_functions import (delete_all_predictions, get_predictions_from_db)
+from services.prediction_funcs import display_predictions
 
 st.set_page_config(page_title="Dự đoán Tiểu Đường", page_icon="🧬", layout="wide")
 
