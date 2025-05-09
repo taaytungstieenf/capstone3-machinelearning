@@ -1,20 +1,18 @@
 import multiprocessing
 import subprocess
-import time
 
-def run_api():
+def run_prediction_api():
     subprocess.run(["python", "backend/prediction_api.py"])
 
-def run_ui():
-    time.sleep(2)  # ensure API starts first
-    subprocess.run(["streamlit", "run", "frontend/prediction_ui.py"])
+def run_exploration_api():
+    subprocess.run(["python", "backend/exploration_api.py"])
 
 if __name__ == "__main__":
-    api_process = multiprocessing.Process(target=run_api)
-    ui_process = multiprocessing.Process(target=run_ui)
+    api1 = multiprocessing.Process(target=run_prediction_api)
+    api2 = multiprocessing.Process(target=run_exploration_api)
 
-    api_process.start()
-    ui_process.start()
+    api1.start()
+    api2.start()
 
-    api_process.join()
-    ui_process.join()
+    api1.join()
+    api2.join()

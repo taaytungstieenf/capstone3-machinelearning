@@ -5,27 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b564f29-4f79-45da-bd54-00d80daa3421" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/database_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/database_functions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/services/prediction_funcs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/exploration_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/Home.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pages/Exploration.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prediction_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/db.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/boosting_models/xgboost_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catboost_info/catboost_training.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catboost_info/learn/events.out.tfevents" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catboost_info/learn_error.tsv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catboost_info/time_left.tsv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/diabetes_dataset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/diabetes_dataset.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/prediction_ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/utils/funcs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/prediction_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/Prediction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/services/prediction_funcs.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_comparisons/CatBoost.py" beforeDir="false" afterPath="$PROJECT_DIR$/boosting_models/catboost_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_comparisons/LightGBM.py" beforeDir="false" afterPath="$PROJECT_DIR$/boosting_models/lightgbm_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_comparisons/XGBoost.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/label_encoders.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/xgb_model.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,14 +84,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/pages" />
+      <recent name="$PROJECT_DIR$/frontend" />
+      <recent name="$PROJECT_DIR$/frontend/services" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/model_comparisons/models" />
-      <recent name="$PROJECT_DIR$/model_comparisons" />
-      <recent name="$PROJECT_DIR$/database" />
-      <recent name="$PROJECT_DIR$/data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.catboost_model">
+  <component name="RunManager" selected="Python.main">
     <configuration name="catboost_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="capstone3-machinelearning" />
       <option name="ENV_FILES" value="" />
@@ -199,8 +186,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.catboost_model" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.catboost_model" />
         <item itemvalue="Python.lightgbm_model" />
         <item itemvalue="Python.xgboost_model" />
       </list>
@@ -255,7 +242,7 @@
       <workItem from="1745903612629" duration="1751000" />
       <workItem from="1745972559839" duration="728000" />
       <workItem from="1746204173145" duration="40000" />
-      <workItem from="1746761190086" duration="5853000" />
+      <workItem from="1746761190086" duration="11908000" />
     </task>
     <servers />
   </component>
@@ -284,7 +271,7 @@
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$orthers_KNN.coverage" NAME="orthers_KNN Coverage Results" MODIFIED="1745031879667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$orthers_LogisticRegression.coverage" NAME="orthers_LogisticRegression Coverage Results" MODIFIED="1745031933936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$projectModel.coverage" NAME="projectModel Coverage Results" MODIFIED="1745128244153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/capstone3_machinelearning$main.coverage" NAME="main Coverage Results" MODIFIED="1746766770562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/capstone3_machinelearning$main.coverage" NAME="main Coverage Results" MODIFIED="1746773085089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$decisiontree_model.coverage" NAME="decisiontree_model Coverage Results" MODIFIED="1744563337347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$logisticregression_model.coverage" NAME="logisticregression_model Coverage Results" MODIFIED="1744975917238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$api.coverage" NAME="api Coverage Results" MODIFIED="1745403681121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
