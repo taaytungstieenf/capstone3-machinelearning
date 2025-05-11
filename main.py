@@ -2,10 +2,10 @@ import multiprocessing
 import subprocess
 
 def run_prediction_api():
-    subprocess.run(["python", "backend/prediction_api.py"])
+    subprocess.run(["python", "backend/assessment.py"])
 
 def run_exploration_api():
-    subprocess.run(["python", "backend/exploration_api.py"])
+    subprocess.run(["python", "backend/exploration.py"])
 
 if __name__ == "__main__":
     api1 = multiprocessing.Process(target=run_prediction_api)

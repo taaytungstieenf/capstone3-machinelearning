@@ -82,7 +82,7 @@ def get_predictions_from_db():
         FROM predictions p
         JOIN patients pt ON p.patient_id = pt.id
         ORDER BY p.timestamp DESC
-        LIMIT 10
+        LIMIT 2
     ''')
     predictions = cursor.fetchall()
     conn.close()

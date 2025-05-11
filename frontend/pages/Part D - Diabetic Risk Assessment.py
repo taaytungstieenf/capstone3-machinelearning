@@ -40,31 +40,6 @@ st.markdown("""
 <style> ... </style>
 """, unsafe_allow_html=True)
 
-# Tiêu đề
-st.markdown(
-    """
-    <style>
-        .app-title {
-            text-align: center;
-            padding-top: 10px;
-            padding-bottom: 30px;
-        }
-        .app-title h1 {
-            font-size: 42px;
-            font-weight: bold;
-            background: -webkit-linear-gradient(left, #2C3E50, #3498DB);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-            margin: 0;
-        }
-    </style>
-    <div class="app-title">
-        <h1>Ứng dụng Dự đoán Bệnh Tiểu Đường</h1>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
 
 # --- Form nhập liệu ---
 col_left, col_right = st.columns([1.2, 1])
@@ -150,3 +125,27 @@ with col_right:
             if st.button("❌ Huỷ bỏ"):
                 st.info("Đã huỷ xoá lịch sử.")
                 st.session_state.confirm_delete = False
+
+# CSS cho footer cố định
+st.markdown("""
+    <style>
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #f0f2f6;
+        color: #333;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# Footer HTML
+st.markdown("""
+    <div class="footer">
+        © 2025 Nguyễn Đức Tây | All rights reserved.
+    </div>
+""", unsafe_allow_html=True)
