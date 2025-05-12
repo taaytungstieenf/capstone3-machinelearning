@@ -5,21 +5,34 @@ import io
 
 st.set_page_config(layout="wide")
 
-st.markdown("<h3 style='text-align: left; 24px; color: #21130d;''>📂 Khám phá tập dữ liệu CSV</h3>", unsafe_allow_html=True)
-#st.markdown("<h2 style='font-size: 24px; color: #21130d;'>📂 Khám phá tập dữ liệu CSV</h2>", unsafe_allow_html=True)
+# Tiêu đề chính
+st.markdown("<h1 style='text-align: center; color: #21130d;'>Giới Thiệu Sơ Bộ Về Tập Dữ Liệu CSV</h1>", unsafe_allow_html=True)
 
+#st.markdown("<br><br>", unsafe_allow_html=True)
 
-uploaded_file = st.file_uploader("", type=["csv"])
+# Đưa uploader vào thanh bên
+st.sidebar.markdown("### 📂 Tải lên tệp CSV")
+uploaded_file = st.sidebar.file_uploader("", type=["csv"])
 
 # Khởi tạo session_state nếu chưa có
 if "preview_data" not in st.session_state:
     st.session_state.preview_data = None
 if "summary_data" not in st.session_state:
     st.session_state.summary_data = None
+if "uploaded_file" not in st.session_state:
+    st.session_state.uploaded_file = None
 
+# Lưu trữ file đã tải lên vào session_state
 if uploaded_file is not None:
-    #if st.button("📥 Gửi file lên để xử lý"):
+    st.session_state.uploaded_file = uploaded_file
+
+# Kiểm tra nếu có file trong session_state
+if st.session_state.uploaded_file is not None:
+    uploaded_file = st.session_state.uploaded_file
+
     try:
+        # Nếu đã có dữ liệu preview_data và summary_data thì không gửi lại yêu cầu API
+        if st.session_state.preview_data is None or st.session_state.summary_data is None:
             # Đọc nội dung file một lần duy nhất
             file_bytes = uploaded_file.read()
 
@@ -50,8 +63,11 @@ if uploaded_file is not None:
             else:
                 st.error(f"❌ Lỗi summary: {summary_response.json().get('error')}")
 
+        else:
+            st.info("✅ Dữ liệu đã được tải và lưu trong session.")
+
     except Exception as e:
-            st.error(f"❌ Không thể kết nối đến API: {e}")
+        st.error(f"❌ Không thể kết nối đến API: {e}")
 
     # Tabs hiển thị dữ liệu
     if st.session_state.preview_data or st.session_state.summary_data:
@@ -59,7 +75,6 @@ if uploaded_file is not None:
 
         with tab1:
             if st.session_state.preview_data:
-                #st.subheader("10 dòng đầu của tập dữ liệu:")
                 df = pd.DataFrame(st.session_state.preview_data)
                 st.dataframe(df, use_container_width=True)
             else:
@@ -69,13 +84,11 @@ if uploaded_file is not None:
             if st.session_state.summary_data:
                 summary = st.session_state.summary_data
 
-                #st.subheader("📊 Thống kê tổng quát")
                 st.markdown(
                     f"**🔢 Số dòng:** `{summary['num_rows']}` &nbsp; **🔠 Số cột:** `{summary['num_columns']}`",
                     unsafe_allow_html=True
                 )
 
-                #st.markdown("### 🧾 Tên cột và kiểu dữ liệu:")
                 col_info_df = pd.DataFrame({
                     "Tên cột": summary["columns"],
                     "Kiểu dữ liệu": [summary["dtypes"].get(col, "Không rõ") for col in summary["columns"]]
@@ -86,11 +99,13 @@ if uploaded_file is not None:
 
         with tab3:
             if st.session_state.preview_data:
-                #st.markdown("### 📈 Mô tả thống kê (`describe()`):")
                 describe_df = pd.DataFrame(summary["describe"])
                 st.dataframe(describe_df, use_container_width=True)
             else:
                 st.info("⏳ Chưa có dữ liệu thống kê.")
+
+else:
+    st.info("⏳ Vui lòng tải lên tệp CSV.")
 
 # CSS cho footer cố định
 st.markdown("""
