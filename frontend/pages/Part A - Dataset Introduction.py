@@ -3,18 +3,31 @@ import pandas as pd
 import requests
 import io
 
-st.set_page_config(layout="wide")
+st.set_page_config(page_title="Dataset Introduction", layout="wide", page_icon="⚕️",)
+st.markdown("<h1 style='text-align: center; color: #21130d;'>Giới Thiệu Tập Dữ Liệu</h1>", unsafe_allow_html=True)
 
-# Tiêu đề chính
-st.markdown("<h1 style='text-align: center; color: #21130d;'>Giới Thiệu Sơ Bộ Về Tập Dữ Liệu CSV</h1>", unsafe_allow_html=True)
+st.markdown("""
+    <style>
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #f0f2f6;
+        color: #333;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+    </style>
+    <div class="footer">
+        © 2025 Nguyễn Đức Tây | All rights reserved.
+    </div>
+""", unsafe_allow_html=True)
 
-#st.markdown("<br><br>", unsafe_allow_html=True)
+uploaded_file = st.sidebar.file_uploader("", type=["csv"]) # Đặt thanh upload dataset ở sidebar của streamlit
 
-# Đưa uploader vào thanh bên
-st.sidebar.markdown("### 📂 Tải lên tệp CSV")
-uploaded_file = st.sidebar.file_uploader("", type=["csv"])
-
-# Khởi tạo session_state nếu chưa có
+# Khởi tạo session_state
 if "preview_data" not in st.session_state:
     st.session_state.preview_data = None
 if "summary_data" not in st.session_state:
@@ -22,19 +35,16 @@ if "summary_data" not in st.session_state:
 if "uploaded_file" not in st.session_state:
     st.session_state.uploaded_file = None
 
-# Lưu trữ file đã tải lên vào session_state
+# Lưu trữ file đã tải lên vào session_state (giữ tập dữ liệu khi chuyển tab trên sidebar)
 if uploaded_file is not None:
-    st.session_state.uploaded_file = uploaded_file
+   st.session_state.uploaded_file = uploaded_file
 
 # Kiểm tra nếu có file trong session_state
 if st.session_state.uploaded_file is not None:
     uploaded_file = st.session_state.uploaded_file
-
     try:
-        # Nếu đã có dữ liệu preview_data và summary_data thì không gửi lại yêu cầu API
-        if st.session_state.preview_data is None or st.session_state.summary_data is None:
-            # Đọc nội dung file một lần duy nhất
-            file_bytes = uploaded_file.read()
+        if st.session_state.preview_data is None or st.session_state.summary_data is None: # Nếu đã có dữ liệu preview_data & summary_data thì không gửi lại API
+            file_bytes = uploaded_file.read() # Đọc nội dung file một lần duy nhất
 
             # Gửi tới API /preview
             preview_response = requests.post(
@@ -63,14 +73,10 @@ if st.session_state.uploaded_file is not None:
             else:
                 st.error(f"❌ Lỗi summary: {summary_response.json().get('error')}")
 
-        else:
-            st.info("✅ Dữ liệu đã được tải và lưu trong session.")
-
     except Exception as e:
         st.error(f"❌ Không thể kết nối đến API: {e}")
 
-    # Tabs hiển thị dữ liệu
-    if st.session_state.preview_data or st.session_state.summary_data:
+    if st.session_state.preview_data or st.session_state.summary_data: # Tạo tab hiện thị dữ liệu
         tab1, tab2, tab3 = st.tabs(["📄 Xem trước dữ liệu", "🆔 Tên cột và kiểu dữ liệu", "📊 Thống kê tổng quát"])
 
         with tab1:
@@ -106,27 +112,3 @@ if st.session_state.uploaded_file is not None:
 
 else:
     st.info("⏳ Vui lòng tải lên tệp CSV.")
-
-# CSS cho footer cố định
-st.markdown("""
-    <style>
-    .footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: #f0f2f6;
-        color: #333;
-        text-align: center;
-        padding: 10px;
-        font-size: 14px;
-    }
-    </style>
-""", unsafe_allow_html=True)
-
-# Footer HTML
-st.markdown("""
-    <div class="footer">
-        © 2025 Nguyễn Đức Tây | All rights reserved.
-    </div>
-""", unsafe_allow_html=True)
