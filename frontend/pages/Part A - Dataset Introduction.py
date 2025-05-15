@@ -18,6 +18,7 @@ st.markdown("""
         text-align: center;
         padding: 10px;
         font-size: 14px;
+        z-index: 999;
     }
     </style>
     <div class="footer">
