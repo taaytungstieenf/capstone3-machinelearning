@@ -4,7 +4,18 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="EDA", layout="wide", page_icon="⚕️",)
-st.markdown("<h1 style='text-align: center; color: #21130d;'>Mô Tả Thống Kê Tập Dữ Liệu</h1>", unsafe_allow_html=True)
+st.markdown(
+    """
+    <h1 style='text-align: center;
+               color: #2c3e50;
+               font-size: 40px;
+               font-family: "Trebuchet MS", sans-serif;
+               text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);'>
+        🔍 Mô Tả Thống Kê Tập Dữ Liệu
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
 
 st.markdown("""
     <style>

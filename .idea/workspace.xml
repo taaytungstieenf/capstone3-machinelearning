@@ -7,9 +7,12 @@
     <list default="true" id="1b564f29-4f79-45da-bd54-00d80daa3421" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/database_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/database_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/Home.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Home.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/Part A - Dataset Introduction.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/Part A - Dataset Introduction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/pages/Part B - Exploratory Data Analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/Part B - Exploratory Data Analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/Part C - Boosting Models Comparison.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/Part C - Boosting Models Comparison.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/pages/Part D - Diabetic Risk Assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/Part D - Diabetic Risk Assessment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/Part E - Personal Metrics Charting.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/Part E - Personal Metrics Charting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/Part E - Personal Metrics Charting.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/Part E - Personal Metrics Visualization.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +104,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="Part E - Personal Metrics Charting" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Part E - Personal Metrics Visualization" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="capstone3-machinelearning" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -115,7 +118,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/frontend/pages/Part E - Personal Metrics Charting.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/frontend/pages/Part E - Personal Metrics Visualization.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -222,7 +225,7 @@
         <item itemvalue="Python.xgboost_model" />
         <item itemvalue="Python.lightgbm_model" />
         <item itemvalue="Python.catboost_model" />
-        <item itemvalue="Python.Part E - Personal Metrics Charting" />
+        <item itemvalue="Python.Part E - Personal Metrics Visualization" />
       </list>
     </recent_temporary>
   </component>
@@ -285,7 +288,8 @@
       <workItem from="1747111536179" duration="13512000" />
       <workItem from="1747320970003" duration="13241000" />
       <workItem from="1747369790082" duration="12284000" />
-      <workItem from="1747390357991" duration="2720000" />
+      <workItem from="1747390357991" duration="3483000" />
+      <workItem from="1747408519750" duration="8442000" />
     </task>
     <servers />
   </component>
@@ -316,7 +320,7 @@
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$project_app.coverage" NAME="project_app Coverage Results" MODIFIED="1745119909809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$orthers_KNN.coverage" NAME="orthers_KNN Coverage Results" MODIFIED="1745031879667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$projectModel.coverage" NAME="projectModel Coverage Results" MODIFIED="1745128244153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/capstone3_machinelearning$main.coverage" NAME="main Coverage Results" MODIFIED="1747392638353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/capstone3_machinelearning$main.coverage" NAME="main Coverage Results" MODIFIED="1747417564636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$decisiontree_model.coverage" NAME="decisiontree_model Coverage Results" MODIFIED="1744563337347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$logisticregression_model.coverage" NAME="logisticregression_model Coverage Results" MODIFIED="1744975917238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$Visualization.coverage" NAME="Visualization Coverage Results" MODIFIED="1746778110095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend/pages" />

@@ -1,11 +1,22 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="EDA",
+    page_title="Assessment",
     layout="wide",
     page_icon="⚕️"
 )
-st.markdown("<h1 style='text-align: center; color: #21130d;'>Thực Hiện Dự Đoán Bệnh Tiểu Đường</h1>", unsafe_allow_html=True)
+st.markdown(
+    """
+    <h1 style='text-align: center;
+               color: #2c3e50;
+               font-size: 40px;
+               font-family: "Trebuchet MS", sans-serif;
+               text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);'>
+        🚀 Dự Đoán Bệnh Tiểu Đường
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
 st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)
 
 
@@ -25,44 +36,54 @@ def display_predictions(predictions, st):
         st.write("Không có dữ liệu dự đoán.")
     else:
         for pred in predictions:
-            st.write(f"🕒 **Thời gian:** {pred[9]}")
-            col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
+            #st.write(f"🕒 **Thời gian:** {pred[9]}")
+
+            st.markdown(
+                f"""
+                <div style="font-size:24px; color:#1f77b4; font-weight:bold;">
+                    Thời gian: {pred[9]}
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+
+            col1, col2, col3, col4 = st.columns([1.25, 1, 1, 1.25])
             with col1:
                 st.write(f"👤 **Tên:** {pred[1]}")
                 st.write(f"📅 **Ngày sinh:** {pred[2]}")
             with col2:
-                st.write(f"👵 **Tuổi:** {pred[3]}")
-                st.write(f"⚧️ **Giới tính:** {'Nam' if pred[4] == 1 else 'Nữ'}")
+                st.write(f"🔢 **Tuổi:** {pred[3]}")
+                st.write(f"♂️ **Giới tính:** {'Nam' if pred[4] == 1 else 'Nữ'}")
             with col3:
-                st.write(f"⚖️ **BMI:** {pred[5]}")
-                st.write(f"🩸 **Glucose:** {pred[6]}")
+                st.write(f"📐 **BMI:** {pred[5]}")
+                st.write(f"🩸 **Đường huyết:** {pred[6]}")
             with col4:
-                st.write(f"🧪 **HbA1c:** {pred[7]}")
-                result = '🚨 Có nguy cơ' if pred[8] == 1 else '✅ Không có nguy cơ'
-                st.write(f"📊 **Kết quả:** {result}")
-            st.markdown("---")
+                st.write(f"💉 **HbA1c:** {pred[7]}")
+                result = '🔴 Có nguy cơ' if pred[8] == 1 else '🟢 Không có nguy cơ'
+                st.write(f"📢 **Kết quả:** {result}")
+            #st.markdown("---")
 
 
 # --- Form nhập liệu ---
 col_left, col_right = st.columns([1, 2])
 with col_left:
-    st.markdown("<h3 style='text-align: center;'>🧾 Nhập thông tin cá nhân</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center;'>📝 Nhập thông tin cá nhân</h3>", unsafe_allow_html=True)
     with st.form("patient_form"):
-        name = st.text_input("👤 Họ tên")
+        name = st.text_input("👤 Họ và tên")
         dob = st.date_input("📅 Ngày sinh", value=date(1990, 1, 1),
                             min_value=date(1900, 1, 1), max_value=date.today())
         col1, col2 = st.columns(2)
         with col1:
-            age = st.number_input("👵 Tuổi", 0, 120, 30)
-            gender = st.selectbox("⚧️ Giới tính", ["Nam", "Nữ"])
-            bmi = st.number_input("⚖️ BMI", 10.0, 60.0, 22.5)
+            age = st.number_input("🔢 Tuổi hiện tại", 0, 120, 30)
+            gender = st.selectbox("♂️ Giới tính", ["Nam", "Nữ"])
             smoking_history = st.selectbox("🚬 Tiền sử hút thuốc", ["Không", "Trung bình", "Nặng"])
+            bmi = st.number_input("📐 Chỉ số khối cơ thể (BMI)", 10.0, 60.0, 22.5)
         with col2:
-            hypertension = st.selectbox("💓 Tăng huyết áp", ["Không", "Có"])
-            heart_disease = st.selectbox("❤️ Bệnh tim", ["Không", "Có"])
-            glucose = st.number_input("🩸 Đường huyết", 50.0, 400.0, 120.0)
-            hba1c = st.number_input("🧪 HbA1c", 3.0, 15.0, 5.5)
-        submit_btn = st.form_submit_button("📊 Dự đoán nguy cơ")
+            hypertension = st.selectbox("💓 Có tăng huyết áp?", ["Không", "Có"])
+            heart_disease = st.selectbox("❤️ Có tiền sử bênh tim?", ["Không", "Có"])
+            glucose = st.number_input("🩸 Chỉ số đường huyết", 50.0, 400.0, 120.0)
+            hba1c = st.number_input("💉 Tỷ lệ đường trong máu (HbA1c)", 3.0, 15.0, 5.5)
+        submit_btn = st.form_submit_button("Dự đoán nguy cơ")
 
     gender_map = {"Nam": 1, "Nữ": 0}
     smoke_map = {"Không": 0, "Trung bình": 1, "Nặng": 2}
@@ -100,7 +121,7 @@ with col_left:
 
 # --- Bên phải: lịch sử & xoá ---
 with col_right:
-    st.markdown("<h3 style='text-align: center;'>🛢️ Lịch sử dự đoán gần đây</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center;'>📜 Lịch sử dự đoán gần đây</h3>", unsafe_allow_html=True)
 
     with st.expander("Nhấn để xem"):
         predictions = get_predictions_from_db()
@@ -110,7 +131,7 @@ with col_right:
         st.session_state.confirm_delete = False
 
     if not st.session_state.confirm_delete:
-        if st.button("🗑️ Xoá toàn bộ lịch sử dự đoán"):
+        if st.button("Xoá toàn bộ lịch sử dự đoán"):
             st.session_state.confirm_delete = True
     else:
         st.warning("Bạn có chắc chắn muốn xoá toàn bộ lịch sử?")

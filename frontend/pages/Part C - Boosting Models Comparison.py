@@ -17,8 +17,19 @@ metric_files = [
 all_metrics = pd.concat([pd.read_csv(file) for file in metric_files], ignore_index=True)
 all_metrics.set_index("model", inplace=True)
 
-st.set_page_config(page_title="EDA", layout="wide", page_icon="⚕️",)
-st.markdown("<h1 style='text-align: center; color: #21130d;'>So Sánh Các Mô Hình Boosting</h1>", unsafe_allow_html=True)
+st.set_page_config(page_title="Comparison", layout="wide", page_icon="⚕️",)
+st.markdown(
+    """
+    <h1 style='text-align: center;
+               color: #2c3e50;
+               font-size: 40px;
+               font-family: "Trebuchet MS", sans-serif;
+               text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);'>
+        ⚖️ So Sánh Các Mô Hình Boosting
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
 
 st.markdown("""
     <style>
@@ -49,15 +60,15 @@ with col1:
     st.dataframe(all_metrics.style.format("{:.4f}"))
 
     metrics_to_plot = ["accuracy", "auc", "precision", "recall", "f1_score", "training_time"]
-    selected_metric = st.selectbox("📈 Chọn chỉ số để so sánh", metrics_to_plot, index=0)
+    selected_metric = st.selectbox("Chọn chỉ số để so sánh", metrics_to_plot, index=0)
 
-    st.markdown(f"<h3 style='text-align: center;'>📊 Biểu đồ so sánh {selected_metric.capitalize()}</h3>", unsafe_allow_html=True)
+    st.markdown(f"<h3 style='text-align: center;'>📊 Biểu đồ so sánh {selected_metric}</h3>", unsafe_allow_html=True)
 
     st.bar_chart(all_metrics[selected_metric])
 
 # --- CỘT 2: Feature Importance ---
 with col2:
-    st.markdown("<h3 style='text-align: center; color: #21130d;'>🧠 Feature Importance</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; color: #21130d;'>💡 Feature Importance</h3>", unsafe_allow_html=True)
 
     models = ["CatBoost", "XGBoost", "LightGBM"]
     model_to_filename = {

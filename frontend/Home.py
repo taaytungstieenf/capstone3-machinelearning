@@ -40,12 +40,12 @@ col1, col2 = st.columns([1.2, 2])
 
 with col1:
     st.markdown("""
-    ### Chức Năng Chính Của Dự Án:
-    - 📂 Khám phá tập dữ liệu để hiểu thêm về các thông số và mẫu dữ liệu
+    ## 📍 Chức Năng Chính Của Dự Án
+    - ℹ️ Khám phá tập dữ liệu để hiểu thêm về các thông số và mẫu dữ liệu
     - 🔍 Phân tách và đánh giá tập dữ liệu
-    - 🚀 Đánh giá các mô hình tương đồng trên cùng tập dữ liệu
-    - 📊 Dự đoán nguy cơ mắc tiểu đường dựa trên các chỉ số cơ thể
-    - 📈 Mô tả tổng quát các chỉ số cơ thể trên biểu đồ 
+    - ⚖️ Đánh giá các mô hình tương đồng trên cùng tập dữ liệu
+    - 🚀 Dự đoán nguy cơ mắc tiểu đường dựa trên các chỉ số cơ thể
+    - 📊 Mô tả tổng quát các chỉ số cơ thể trên biểu đồ 
     """)
 
     st.markdown("<div style='height: 50px;'></div>", unsafe_allow_html=True)

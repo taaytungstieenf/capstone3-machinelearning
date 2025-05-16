@@ -3,8 +3,21 @@ import pandas as pd
 import requests
 import io
 
-st.set_page_config(page_title="Dataset Introduction", layout="wide", page_icon="⚕️",)
-st.markdown("<h1 style='text-align: center; color: #21130d;'>Giới Thiệu Tập Dữ Liệu</h1>", unsafe_allow_html=True)
+st.set_page_config(page_title="Introduction", layout="wide", page_icon="⚕️",)
+st.markdown(
+    """
+    <h1 style='text-align: center;
+               color: #2c3e50;
+               font-size: 40px;
+               font-family: "Trebuchet MS", sans-serif;
+               text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);'>
+        ℹ️ Giới Thiệu Tập Dữ Liệu
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
+
+
 
 st.markdown("""
     <style>
