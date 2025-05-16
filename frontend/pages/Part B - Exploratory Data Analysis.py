@@ -101,7 +101,7 @@ elif chart_choice == "Histogram - Integer & Float":
         st.pyplot(fig)
 
         with col1:
-            st.markdown("<h5 style='text-align: center; color: #21130d;'>Thống Kê Trên Từng Thuộc Tính</h5>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; color: #21130d;'>📋 Thống Kê Trên Từng Thuộc Tính</h3>", unsafe_allow_html=True)
             st.write(df[selected_num_col].describe())
 
 elif chart_choice == "Boxplot - Outliers by Numbers":
@@ -117,7 +117,7 @@ elif chart_choice == "Boxplot - Outliers by Numbers":
         st.pyplot(fig)
 
         with col1:
-            st.markdown("<h5 style='text-align: center; color: #21130d;'>Thống Kê Trên Từng Thuộc Tính</h5>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; color: #21130d;'>📋 Thống Kê Trên Từng Thuộc Tính</h3>", unsafe_allow_html=True)
             st.write(df[selected_num_col].describe())
 
 elif chart_choice == "Boxplot - Category vs. Numbers":

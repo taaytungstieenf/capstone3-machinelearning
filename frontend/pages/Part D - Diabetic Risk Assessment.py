@@ -5,7 +5,7 @@ st.set_page_config(
     layout="wide",
     page_icon="⚕️"
 )
-st.markdown("<h1 style='text-align: center; color: #21130d;'>Thực Hiện Dự Đoán Trên</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #21130d;'>Thực Hiện Dự Đoán Bệnh Tiểu Đường</h1>", unsafe_allow_html=True)
 st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)
 
 
@@ -25,12 +25,13 @@ def display_predictions(predictions, st):
         st.write("Không có dữ liệu dự đoán.")
     else:
         for pred in predictions:
-            col1, col2, col3, col4 = st.columns([2, 1, 2, 2])
+            st.write(f"🕒 **Thời gian:** {pred[9]}")
+            col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
             with col1:
                 st.write(f"👤 **Tên:** {pred[1]}")
-                st.write(f"🎂 **Ngày sinh:** {pred[2]}")
+                st.write(f"📅 **Ngày sinh:** {pred[2]}")
             with col2:
-                st.write(f"🧓 **Tuổi:** {pred[3]}")
+                st.write(f"👵 **Tuổi:** {pred[3]}")
                 st.write(f"⚧️ **Giới tính:** {'Nam' if pred[4] == 1 else 'Nữ'}")
             with col3:
                 st.write(f"⚖️ **BMI:** {pred[5]}")
@@ -39,12 +40,11 @@ def display_predictions(predictions, st):
                 st.write(f"🧪 **HbA1c:** {pred[7]}")
                 result = '🚨 Có nguy cơ' if pred[8] == 1 else '✅ Không có nguy cơ'
                 st.write(f"📊 **Kết quả:** {result}")
-            st.write(f"🕒 **Thời gian:** {pred[9]}")
             st.markdown("---")
 
 
 # --- Form nhập liệu ---
-col_left, col_right = st.columns([1.2, 1])
+col_left, col_right = st.columns([1, 2])
 with col_left:
     st.markdown("<h3 style='text-align: center;'>🧾 Nhập thông tin cá nhân</h3>", unsafe_allow_html=True)
     with st.form("patient_form"):

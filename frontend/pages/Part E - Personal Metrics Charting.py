@@ -46,7 +46,7 @@ else:
 
     st.markdown(f"""
     <div style="font-size: 16px; padding: 4px 0;">
-        👤 <b>Họ tên:</b> {name} | 🎂 <b>Ngày sinh:</b> {dob} | 🕒 <b>Thời gian:</b> {timestamp} | 🧪 <b>Kết quả:</b> {'<span style="color:red;">🚨 Nguy cơ tiểu đường</span>' if prediction == 1 else '<span style="color:green;">✅ Không có nguy cơ</span>'}
+        👤 <b>Họ tên:</b> {name} | 📅 <b>Ngày sinh:</b> {dob} | 🕒 <b>Thời gian:</b> {timestamp} | 🧪 <b>Kết quả:</b> {'<span style="color:red;">🚨 Nguy cơ tiểu đường</span>' if prediction == 1 else '<span style="color:green;">✅ Không có nguy cơ</span>'}
     </div>
     """, unsafe_allow_html=True)
 
