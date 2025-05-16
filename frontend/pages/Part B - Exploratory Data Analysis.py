@@ -66,7 +66,7 @@ chart_choice = st.sidebar.radio("",
 col1, col2, col3, col4 = st.columns([1, 0.15, 1.75, 0.15])
 
 with col1:
-    st.markdown("<h5 style='text-align: center; color: #21130d;'>Kiểu dữ liệu của các thuộc tính sau khi chuẩn hóa</h5>",unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; color: #21130d;'>📋 Kiểu dữ liệu</h3>",unsafe_allow_html=True)
     st.dataframe(df.dtypes.reset_index().rename(columns={"index": "Tên cột", 0: "Kiểu dữ liệu"}))
 
 # Hiển thị sơ đồ dựa trên lựa chọn của người dùng
@@ -85,7 +85,7 @@ if chart_choice == "Histogram - Category":
         st.pyplot(fig)
 
     with col1:
-        st.markdown("<h5 style='text-align: center; color: #21130d;'>Thống Kê Trên Từng Thuộc Tính</h5>",unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center; color: #21130d;'>📋 Thống Kê Trên Từng Thuộc Tính</h3>",unsafe_allow_html=True)
         st.write(df[selected_col].value_counts())
 
 elif chart_choice == "Histogram - Integer & Float":

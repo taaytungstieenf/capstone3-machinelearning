@@ -31,7 +31,7 @@ st.markdown("""
     </style>
 
     <div class="header"></div>
-        <h1 style="text-align: center; color: #1e81b0; font-size: 50px; font-weight: 600; margin-bottom: 0px;">ỨNG DỤNG DỰ ĐOÁN TIỂU ĐƯỜNG</h1>
+        <h1 style="text-align: center; color: #1e81b0; font-size: 50px; font-weight: 600; margin-bottom: 0px;">ỨNG DỤNG DỰ ĐOÁN BỆNH TIỂU ĐƯỜNG</h1>
     <div class="main-content">
 """, unsafe_allow_html=True)
 

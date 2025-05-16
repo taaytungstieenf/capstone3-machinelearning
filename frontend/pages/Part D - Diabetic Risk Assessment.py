@@ -1,4 +1,14 @@
 import streamlit as st
+
+st.set_page_config(
+    page_title="EDA",
+    layout="wide",
+    page_icon="⚕️"
+)
+st.markdown("<h1 style='text-align: center; color: #21130d;'>Thực Hiện Dự Đoán Trên</h1>", unsafe_allow_html=True)
+st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)
+
+
 import requests
 import sys
 import os
@@ -31,14 +41,6 @@ def display_predictions(predictions, st):
                 st.write(f"📊 **Kết quả:** {result}")
             st.write(f"🕒 **Thời gian:** {pred[9]}")
             st.markdown("---")
-
-
-st.set_page_config(page_title="Dự đoán Tiểu Đường", page_icon="🧬", layout="wide")
-
-# CSS
-st.markdown("""
-<style> ... </style>
-""", unsafe_allow_html=True)
 
 
 # --- Form nhập liệu ---
