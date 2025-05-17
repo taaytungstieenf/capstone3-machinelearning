@@ -1,8 +1,8 @@
 import streamlit as st
 import matplotlib.pyplot as plt
-import numpy as np
 import sys
 import os
+import io
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 from database.database_functions import get_predictions_from_db
@@ -65,11 +65,10 @@ else:
 
     # Giá trị và ngưỡng theo thứ tự: BMI, Glucose, HbA1c
     metrics = {
-        'BMI': {'value': bmi, 'threshold': 24.9},
-        'Glucose': {'value': glucose, 'threshold': 130},
-        'HbA1c': {'value': hba1c, 'threshold': 7}
+        'BMI (kg/m²)': {'value': bmi, 'threshold': 24.9},
+        'Glucose (mg/dL)': {'value': glucose, 'threshold': 130},
+        'HbA1c (%)': {'value': hba1c, 'threshold': 7}
     }
-
 
     # Hàm xác định màu theo giá trị và ngưỡng
     def get_color(val, threshold):
@@ -150,6 +149,19 @@ else:
     with col1:
         st.pyplot(fig)
 
+        # Lưu biểu đồ vào bộ nhớ đệm dưới dạng PNG
+        img_buffer = io.BytesIO()
+        fig.savefig(img_buffer, format='png')
+        img_buffer.seek(0)
+
+        # Tạo nút tải xuống
+        st.download_button(
+            label="Tải biểu đồ",
+            data=img_buffer,
+            file_name='bieu_do_suc_khoe.png',
+            mime='image/png'
+        )
+
     with col2:
         st.markdown("<h3 style='text-align: center; color: #21130d;'>🤓 Đánh giá chỉ số</h3>", unsafe_allow_html=True)
 
@@ -219,4 +231,3 @@ else:
                 """,
                 unsafe_allow_html=True
             )
-

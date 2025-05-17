@@ -83,7 +83,7 @@ with col_left:
             heart_disease = st.selectbox("❤️ Có tiền sử bênh tim?", ["Không", "Có"])
             glucose = st.number_input("🩸 Chỉ số đường huyết", 50.0, 400.0, 120.0)
             hba1c = st.number_input("💉 Tỷ lệ đường trong máu (HbA1c)", 3.0, 15.0, 5.5)
-        submit_btn = st.form_submit_button("Dự đoán nguy cơ")
+        submit_btn = st.form_submit_button("Tiến hành dự đoán")
 
     gender_map = {"Nam": 1, "Nữ": 0}
     smoke_map = {"Không": 0, "Trung bình": 1, "Nặng": 2}

@@ -65,12 +65,12 @@ df = st.session_state.df
 # Tạo menu chọn sơ đồ trong sidebar
 chart_choice = st.sidebar.radio("",
     (
-        "Histogram - Category",
-        "Histogram - Integer & Float",
-        "Boxplot - Outliers by Numbers",
-        "Boxplot - Category vs. Numbers",
-        "Scatter Plot On Notable Indicators",
-        "Correlation Heatmap On Attributes"
+        "Chart 1 - Category Histogram",
+        "Chart 2 - Numerical Histogram",
+        "Chart 3 - Numerical Outliers Boxplot",
+        "Chart 4 - Cat vs Num Boxplot",
+        "Chart 5 - Significances Scatterplot",
+        "Chart 6 - Correlation Heatmap"
     )
 )
 
@@ -81,7 +81,7 @@ with col1:
     st.dataframe(df.dtypes.reset_index().rename(columns={"index": "Tên cột", 0: "Kiểu dữ liệu"}))
 
 # Hiển thị sơ đồ dựa trên lựa chọn của người dùng
-if chart_choice == "Histogram - Category":
+if chart_choice == "Chart 1 - Category Histogram":
     with col3:
         cat_columns = df.select_dtypes(include=['category']).columns.tolist()
 
@@ -99,7 +99,7 @@ if chart_choice == "Histogram - Category":
         st.markdown("<h3 style='text-align: center; color: #21130d;'>📋 Thống Kê Trên Từng Thuộc Tính</h3>",unsafe_allow_html=True)
         st.write(df[selected_col].value_counts())
 
-elif chart_choice == "Histogram - Integer & Float":
+elif chart_choice == "Chart 2 - Numerical Histogram":
     with col3:
         num_cols = df.select_dtypes(include=['float64', 'int64']).columns.tolist()
 
@@ -115,7 +115,7 @@ elif chart_choice == "Histogram - Integer & Float":
             st.markdown("<h3 style='text-align: center; color: #21130d;'>📋 Thống Kê Trên Từng Thuộc Tính</h3>", unsafe_allow_html=True)
             st.write(df[selected_num_col].describe())
 
-elif chart_choice == "Boxplot - Outliers by Numbers":
+elif chart_choice == "Chart 3 - Numerical Outliers Boxplot":
     with col3:
         num_cols = df.select_dtypes(include=['int64', 'float64']).columns.tolist()
 
@@ -131,7 +131,7 @@ elif chart_choice == "Boxplot - Outliers by Numbers":
             st.markdown("<h3 style='text-align: center; color: #21130d;'>📋 Thống Kê Trên Từng Thuộc Tính</h3>", unsafe_allow_html=True)
             st.write(df[selected_num_col].describe())
 
-elif chart_choice == "Boxplot - Category vs. Numbers":
+elif chart_choice == "Chart 4 - Cat vs Num Boxplot":
     with col1:
         num_cols = df.select_dtypes(include=['float64', 'int64']).columns.tolist()
         cat_cols = df.select_dtypes(include='category').columns.tolist()
@@ -147,7 +147,7 @@ elif chart_choice == "Boxplot - Category vs. Numbers":
         plt.xticks(rotation=00)
         st.pyplot(fig)
 
-elif chart_choice == "Scatter Plot On Notable Indicators":
+elif chart_choice == "Chart 5 - Significances Scatterplot":
     with col1:
         cat_cols = df.select_dtypes(include='category').columns.tolist()
         hue_col = st.selectbox("Chọn thuộc tính phân loại để tô màu", ["(Click chọn)"] + cat_cols)
@@ -168,7 +168,7 @@ elif chart_choice == "Scatter Plot On Notable Indicators":
 
         st.pyplot(fig)
 
-elif chart_choice == "Correlation Heatmap On Attributes":
+elif chart_choice == "Chart 6 - Correlation Heatmap":
     with col3:
         fig4, ax4 = plt.subplots(figsize=(10, 6))
         sns.heatmap(
@@ -187,5 +187,3 @@ elif chart_choice == "Correlation Heatmap On Attributes":
     st.markdown("### 🔎 Nhận xét:")
     st.markdown("- `bmi` có tương quan cao nhất với `age` vì khi về già con người có su hướng tăng cân.")
     st.markdown("- `HbA1c_level` có tương quan cao thứ nhì với `blood_glucose_level` bởi vì số đo đường huyết liên quan trực tiếp đến mức đường huyết đang có trong máu")
-
-
