@@ -70,16 +70,16 @@ with col1:
 with col2:
     chart_choice = st.sidebar.radio("",
         (
-            "Chart 1 - Feature Importance",
-            "Chart 2 - Confusion Matrix",
-            "Chart 3 - Precision-recall Curve",
-            "Chart 4 - ROC Curve"
+            "Chart 1 – Feature Importance",
+            "Chart 2 – Confusion Matrix",
+            "Chart 3 – Precision-Recall Curve",
+            "Chart 4 – ROC Curve"
         )
     )
 
-    if chart_choice == "Chart 1 - Feature Importance":
+    if chart_choice == "Chart 1 – Feature Importance":
         # --- Feature Importance ---
-        st.markdown("<h3 style='text-align: center; color: #21130d;'>💡 Feature Importance</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center; color: #21130d;'>💡 Thuộc Tính Đặc Trưng</h3>", unsafe_allow_html=True)
 
         models = ["CatBoost", "XGBoost", "LightGBM"]
         model_to_filename = {
@@ -96,9 +96,9 @@ with col2:
         else:
             st.warning(f"Không tìm thấy hình ảnh cho {selected_model}.")
 
-    elif chart_choice == "Chart 2 - Confusion Matrix":
+    elif chart_choice == "Chart 2 – Confusion Matrix":
         # --- Confusion Matrix ---
-        st.markdown("<h3 style='text-align: center; color: #21130d;'>🔡 Confusion Matrix</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center; color: #21130d;'>🔡 Ma Trận Nhầm Lẫn</h3>", unsafe_allow_html=True)
 
         models = ["CatBoost", "XGBoost", "LightGBM"]
         confusion_matrix_filenames = {
@@ -119,8 +119,8 @@ with col2:
         else:
             st.warning(f"Không tìm thấy confusion matrix cho {selected_model_cm}.")
 
-    elif chart_choice == "Chart 3 - Precision-recall Curve":
-        st.markdown("<h3 style='text-align: center; color: #21130d;'>📉 Precision-Recall Curve</h3>", unsafe_allow_html=True)
+    elif chart_choice == "Chart 3 – Precision-Recall Curve":
+        st.markdown("<h3 style='text-align: center; color: #21130d;'>📉 Đường Cong Precision-Recall</h3>", unsafe_allow_html=True)
 
         fig, ax = plt.subplots(figsize=(5.5, 4.0))  # 👈 nhỏ gọn
 
@@ -159,8 +159,8 @@ with col2:
         plt.tight_layout()
         st.pyplot(fig)
 
-    elif chart_choice == "Chart 4 - ROC Curve":
-        st.markdown("<h3 style='text-align: center; color: #21130d;'>📈 ROC Curve</h3>", unsafe_allow_html=True)
+    elif chart_choice == "Chart 4 – ROC Curve":
+        st.markdown("<h3 style='text-align: center; color: #21130d;'>📈 Đường Cong ROC</h3>", unsafe_allow_html=True)
 
         fig, ax = plt.subplots(figsize=(5.5, 4.0))  # 👈 thu gọn lại một chút
 

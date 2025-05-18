@@ -5,7 +5,7 @@ import os
 
 from database.database_functions import save_prediction
 
-#
+
 app = Flask(__name__)
 model_path = os.path.join("boosting_models/models", "xgboost_model.pkl")
 model = joblib.load(model_path)

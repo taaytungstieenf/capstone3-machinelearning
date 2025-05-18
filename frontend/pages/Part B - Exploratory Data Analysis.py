@@ -65,12 +65,12 @@ df = st.session_state.df
 # Tạo menu chọn sơ đồ trong sidebar
 chart_choice = st.sidebar.radio("",
     (
-        "Chart 1 - Category Histogram",
-        "Chart 2 - Numerical Histogram",
-        "Chart 3 - Numerical Outliers Boxplot",
-        "Chart 4 - Cat vs Num Boxplot",
-        "Chart 5 - Significances Scatterplot",
-        "Chart 6 - Correlation Heatmap"
+        "Chart 1 – Category Histogram",
+        "Chart 2 – Numerical Histogram",
+        "Chart 3 – Numerical Outliers Boxplot",
+        "Chart 4 – Cat vs Num Boxplot",
+        "Chart 5 – Significances Scatterplot",
+        "Chart 6 – Correlation Heatmap"
     )
 )
 
@@ -81,7 +81,7 @@ with col1:
     st.dataframe(df.dtypes.reset_index().rename(columns={"index": "Tên cột", 0: "Kiểu dữ liệu"}))
 
 # Hiển thị sơ đồ dựa trên lựa chọn của người dùng
-if chart_choice == "Chart 1 - Category Histogram":
+if chart_choice == "Chart 1 – Category Histogram":
     with col3:
         cat_columns = df.select_dtypes(include=['category']).columns.tolist()
 
@@ -99,7 +99,7 @@ if chart_choice == "Chart 1 - Category Histogram":
         st.markdown("<h3 style='text-align: center; color: #21130d;'>📋 Thống Kê Trên Từng Thuộc Tính</h3>",unsafe_allow_html=True)
         st.write(df[selected_col].value_counts())
 
-elif chart_choice == "Chart 2 - Numerical Histogram":
+elif chart_choice == "Chart 2 – Numerical Histogram":
     with col3:
         num_cols = df.select_dtypes(include=['float64', 'int64']).columns.tolist()
 
@@ -115,7 +115,7 @@ elif chart_choice == "Chart 2 - Numerical Histogram":
             st.markdown("<h3 style='text-align: center; color: #21130d;'>📋 Thống Kê Trên Từng Thuộc Tính</h3>", unsafe_allow_html=True)
             st.write(df[selected_num_col].describe())
 
-elif chart_choice == "Chart 3 - Numerical Outliers Boxplot":
+elif chart_choice == "Chart 3 – Numerical Outliers Boxplot":
     with col3:
         num_cols = df.select_dtypes(include=['int64', 'float64']).columns.tolist()
 
@@ -131,7 +131,7 @@ elif chart_choice == "Chart 3 - Numerical Outliers Boxplot":
             st.markdown("<h3 style='text-align: center; color: #21130d;'>📋 Thống Kê Trên Từng Thuộc Tính</h3>", unsafe_allow_html=True)
             st.write(df[selected_num_col].describe())
 
-elif chart_choice == "Chart 4 - Cat vs Num Boxplot":
+elif chart_choice == "Chart 4 – Cat vs Num Boxplot":
     with col1:
         num_cols = df.select_dtypes(include=['float64', 'int64']).columns.tolist()
         cat_cols = df.select_dtypes(include='category').columns.tolist()
@@ -147,7 +147,7 @@ elif chart_choice == "Chart 4 - Cat vs Num Boxplot":
         plt.xticks(rotation=00)
         st.pyplot(fig)
 
-elif chart_choice == "Chart 5 - Significances Scatterplot":
+elif chart_choice == "Chart 5 – Significances Scatterplot":
     with col1:
         cat_cols = df.select_dtypes(include='category').columns.tolist()
         hue_col = st.selectbox("Chọn thuộc tính phân loại để tô màu", ["(Click chọn)"] + cat_cols)
@@ -168,7 +168,7 @@ elif chart_choice == "Chart 5 - Significances Scatterplot":
 
         st.pyplot(fig)
 
-elif chart_choice == "Chart 6 - Correlation Heatmap":
+elif chart_choice == "Chart 6 – Correlation Heatmap":
     with col3:
         fig4, ax4 = plt.subplots(figsize=(10, 6))
         sns.heatmap(

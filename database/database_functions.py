@@ -1,6 +1,5 @@
 import mysql.connector
 from datetime import datetime
-import os
 
 from .database_config import DB_CONFIG # Import DB_CONFIG từ file database_config.py cùng thư mục
 

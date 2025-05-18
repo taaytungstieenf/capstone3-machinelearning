@@ -40,7 +40,7 @@ def display_predictions(predictions, st):
 
             st.markdown(
                 f"""
-                <div style="font-size:24px; color:#1f77b4; font-weight:bold;">
+                <div style="font-size:21.7px; color:#1f77b4; font-weight:bold;">
                     Thời gian: {pred[9]}
                 </div>
                 """,
@@ -53,14 +53,14 @@ def display_predictions(predictions, st):
                 st.write(f"📅 **Ngày sinh:** {pred[2]}")
             with col2:
                 st.write(f"🔢 **Tuổi:** {pred[3]}")
-                st.write(f"♂️ **Giới tính:** {'Nam' if pred[4] == 1 else 'Nữ'}")
+                st.write(f"⚧️ **Giới tính:** {'Nam' if pred[4] == 1 else 'Nữ'}")
             with col3:
                 st.write(f"📐 **BMI:** {pred[5]}")
                 st.write(f"🩸 **Đường huyết:** {pred[6]}")
             with col4:
                 st.write(f"💉 **HbA1c:** {pred[7]}")
                 result = '🔴 Có nguy cơ' if pred[8] == 1 else '🟢 Không có nguy cơ'
-                st.write(f"📢 **Kết quả:** {result}")
+                st.write(f"🔔 **Kết quả:** {result}")
             #st.markdown("---")
 
 
@@ -75,7 +75,7 @@ with col_left:
         col1, col2 = st.columns(2)
         with col1:
             age = st.number_input("🔢 Tuổi hiện tại", 0, 120, 30)
-            gender = st.selectbox("♂️ Giới tính", ["Nam", "Nữ"])
+            gender = st.selectbox("⚧️ Giới tính", ["Nam", "Nữ"])
             smoking_history = st.selectbox("🚬 Tiền sử hút thuốc", ["Không", "Trung bình", "Nặng"])
             bmi = st.number_input("📐 Chỉ số khối cơ thể (BMI)", 10.0, 60.0, 22.5)
         with col2:
@@ -121,19 +121,16 @@ with col_left:
 
 # --- Bên phải: lịch sử & xoá ---
 with col_right:
+    def set_confirm_delete():
+        st.session_state.confirm_delete = True
+
     st.markdown("<h3 style='text-align: center;'>📜 Lịch sử dự đoán gần đây</h3>", unsafe_allow_html=True)
 
     with st.expander("Nhấn để xem"):
         predictions = get_predictions_from_db()
         display_predictions(predictions, st)
 
-    if "confirm_delete" not in st.session_state:
-        st.session_state.confirm_delete = False
-
-    if not st.session_state.confirm_delete:
-        if st.button("Xoá toàn bộ lịch sử dự đoán"):
-            st.session_state.confirm_delete = True
-    else:
+    if st.session_state.get("confirm_delete", False):
         st.warning("Bạn có chắc chắn muốn xoá toàn bộ lịch sử?")
         col_confirm, col_cancel = st.columns(2)
         with col_confirm:
@@ -148,6 +145,8 @@ with col_right:
             if st.button("❌ Huỷ bỏ"):
                 st.info("Đã huỷ xoá lịch sử.")
                 st.session_state.confirm_delete = False
+    else:
+        st.button("Xoá toàn bộ lịch sử dự đoán", on_click=set_confirm_delete)
 
 # CSS cho footer cố định
 st.markdown("""
