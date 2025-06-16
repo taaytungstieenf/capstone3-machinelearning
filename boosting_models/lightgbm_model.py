@@ -19,7 +19,6 @@ df = pd.read_csv("../diabetes_dataset.csv")
 # 2. Encode categorical variables
 label_encoders = {}
 categorical_cols = ['gender', 'smoking_history']
-
 for col in categorical_cols:
     le = LabelEncoder()
     df[col] = le.fit_transform(df[col])
@@ -34,17 +33,24 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
 )
 
-# 5. Train model using LightGBM
+# 5. Train LightGBM model
 model = lgb.LGBMClassifier()
-
 start_time = time.time()
 model.fit(X_train, y_train)
 end_time = time.time()
 
 training_time = end_time - start_time
-print(f'Training Time: {training_time:.4f}')
+print(f'Training Time: {training_time:.4f} seconds')
 
-# 6. Evaluation
+# === Overfitting check: Evaluate on training set ===
+y_train_pred = model.predict(X_train)
+y_train_pred_proba = model.predict_proba(X_train)[:, 1]
+train_accuracy = accuracy_score(y_train, y_train_pred)
+train_roc_auc = roc_auc_score(y_train, y_train_pred_proba)
+print(f"Train Accuracy: {train_accuracy:.4f}")
+print(f"Train AUC:      {train_roc_auc:.4f}")
+
+# 6. Evaluation on test set
 y_pred = model.predict(X_test)
 y_pred_proba = model.predict_proba(X_test)[:, 1]
 
@@ -54,11 +60,17 @@ precision = precision_score(y_test, y_pred)
 recall = recall_score(y_test, y_pred)
 f1 = f1_score(y_test, y_pred)
 
-print(f'Accuracy: {accuracy:.4f}')
-print(f'AUC: {roc_auc:.4f}')
-print(f"Precision: {precision:.4f}")
-print(f"Recall:    {recall:.4f}")
-print(f"F1-score:  {f1:.4f}")
+print(f"Test Accuracy: {accuracy:.4f}")
+print(f"Test AUC:      {roc_auc:.4f}")
+print(f"Precision:     {precision:.4f}")
+print(f"Recall:        {recall:.4f}")
+print(f"F1-score:      {f1:.4f}")
+
+# Overfitting warning
+if (train_accuracy - accuracy > 0.1) or (train_roc_auc - roc_auc > 0.1):
+    print("\n⚠️  CẢNH BÁO: Mô hình có thể đang bị overfitting!")
+else:
+    print("\n✅ Không có dấu hiệu rõ ràng của overfitting.")
 
 # 7. Feature importance plot
 feature_importances = model.feature_importances_
@@ -106,8 +118,10 @@ print(f"Label encoders saved to: {encoders_output_path}")
 # 10. Save evaluation metrics to CSV
 metrics_df = pd.DataFrame([{
     "model": "LightGBM",
-    "accuracy": accuracy,
-    "auc": roc_auc,
+    "train_accuracy": train_accuracy,
+    "train_auc": train_roc_auc,
+    "test_accuracy": accuracy,
+    "test_auc": roc_auc,
     "precision": precision,
     "recall": recall,
     "f1_score": f1,

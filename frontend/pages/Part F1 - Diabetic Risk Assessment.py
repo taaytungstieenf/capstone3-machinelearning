@@ -1,12 +1,22 @@
 import streamlit as st
+import requests
+import sys
+import os
+from datetime import date
 
+# Thêm thư mục cha vào path để import database functions
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+from database.database_functions import delete_all_predictions, get_predictions_from_db
+
+
+# --- CẤU HÌNH TRANG ---
 st.set_page_config(
     page_title="Assessment",
     layout="wide",
     page_icon="⚕️"
 )
-st.markdown(
-    """
+
+st.markdown("""
     <h1 style='text-align: center;
                color: #2c3e50;
                font-size: 40px;
@@ -14,30 +24,16 @@ st.markdown(
                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);'>
         🚀 Dự Đoán Bệnh Tiểu Đường
     </h1>
-    """,
-    unsafe_allow_html=True
-)
+""", unsafe_allow_html=True)
 st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)
 
 
-import requests
-import sys
-import os
-
-from datetime import date
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
-from database.database_functions import delete_all_predictions, get_predictions_from_db
-
-
-# Hàm hiển thị kết quả dự đoán
-def display_predictions(predictions, st):
-
+# --- HÀM HỖ TRỢ ---
+def display_predictions(predictions):
     if not predictions:
         st.write("Không có dữ liệu dự đoán.")
     else:
         for pred in predictions:
-            #st.write(f"🕒 **Thời gian:** {pred[9]}")
-
             st.markdown(
                 f"""
                 <div style="font-size:21.7px; color:#1f77b4; font-weight:bold;">
@@ -46,7 +42,6 @@ def display_predictions(predictions, st):
                 """,
                 unsafe_allow_html=True
             )
-
             col1, col2, col3, col4 = st.columns([1.25, 1, 1, 1.25])
             with col1:
                 st.write(f"👤 **Tên:** {pred[1]}")
@@ -61,17 +56,21 @@ def display_predictions(predictions, st):
                 st.write(f"💉 **HbA1c:** {pred[7]}")
                 result = '🔴 Có nguy cơ' if pred[8] == 1 else '🟢 Không có nguy cơ'
                 st.write(f"🔔 **Kết quả:** {result}")
-            #st.markdown("---")
 
 
-# --- Form nhập liệu ---
+def set_confirm_delete():
+    st.session_state.confirm_delete = True
+
+
+# --- GIAO DIỆN CHÍNH ---
 col_left, col_right = st.columns([1, 2])
+
+# --- Nhập liệu bên trái ---
 with col_left:
     st.markdown("<h3 style='text-align: center;'>📝 Nhập thông tin cá nhân</h3>", unsafe_allow_html=True)
     with st.form("patient_form"):
         name = st.text_input("👤 Họ và tên")
-        dob = st.date_input("📅 Ngày sinh", value=date(1990, 1, 1),
-                            min_value=date(1900, 1, 1), max_value=date.today())
+        dob = st.date_input("📅 Ngày sinh", value=date(1990, 1, 1), min_value=date(1900, 1, 1), max_value=date.today())
         col1, col2 = st.columns(2)
         with col1:
             age = st.number_input("🔢 Tuổi hiện tại", 0, 120, 30)
@@ -80,9 +79,10 @@ with col_left:
             bmi = st.number_input("📐 Chỉ số khối cơ thể (BMI)", 10.0, 60.0, 22.5)
         with col2:
             hypertension = st.selectbox("💓 Có tăng huyết áp?", ["Không", "Có"])
-            heart_disease = st.selectbox("❤️ Có tiền sử bênh tim?", ["Không", "Có"])
+            heart_disease = st.selectbox("❤️ Có tiền sử bệnh tim?", ["Không", "Có"])
             glucose = st.number_input("🩸 Chỉ số đường huyết", 50.0, 400.0, 120.0)
             hba1c = st.number_input("💉 Tỷ lệ đường trong máu (HbA1c)", 3.0, 15.0, 5.5)
+
         submit_btn = st.form_submit_button("Tiến hành dự đoán")
 
     gender_map = {"Nam": 1, "Nữ": 0}
@@ -119,16 +119,13 @@ with col_left:
                 except Exception as e:
                     st.error(f"❌ Lỗi kết nối đến API: {e}")
 
-# --- Bên phải: lịch sử & xoá ---
+
+# --- Lịch sử dự đoán bên phải ---
 with col_right:
-    def set_confirm_delete():
-        st.session_state.confirm_delete = True
-
     st.markdown("<h3 style='text-align: center;'>📜 Lịch sử dự đoán gần đây</h3>", unsafe_allow_html=True)
-
     with st.expander("Nhấn để xem"):
         predictions = get_predictions_from_db()
-        display_predictions(predictions, st)
+        display_predictions(predictions)
 
     if st.session_state.get("confirm_delete", False):
         st.warning("Bạn có chắc chắn muốn xoá toàn bộ lịch sử?")
@@ -148,7 +145,8 @@ with col_right:
     else:
         st.button("Xoá toàn bộ lịch sử dự đoán", on_click=set_confirm_delete)
 
-# CSS cho footer cố định
+
+# --- Footer ---
 st.markdown("""
     <style>
     .footer {
@@ -165,7 +163,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Footer HTML
 st.markdown("""
     <div class="footer">
         © 2025 Nguyễn Đức Tây | All rights reserved.

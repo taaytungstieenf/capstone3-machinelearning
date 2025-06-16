@@ -1,24 +1,32 @@
 import mysql.connector
 from datetime import datetime
+from .database_config import DB_CONFIG
 
-from .database_config import DB_CONFIG # Import DB_CONFIG từ file database_config.py cùng thư mục
 
 def get_db_connection():
     return mysql.connector.connect(**DB_CONFIG)
 
-def init_db():
-    conn = get_db_connection()
-    cursor = conn.cursor()
 
-    cursor.execute('''
+def execute_query(query, params=None, fetch=False):
+    with get_db_connection() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute(query, params or ())
+            if fetch:
+                return cursor.fetchall()
+            conn.commit()
+            return cursor.lastrowid if query.strip().lower().startswith("insert") else None
+
+
+def init_db():
+    create_tables = [
+        '''
         CREATE TABLE IF NOT EXISTS patients (
             id INT AUTO_INCREMENT PRIMARY KEY,
             name VARCHAR(255),
             dob DATE
         )
-    ''')
-
-    cursor.execute('''
+        ''',
+        '''
         CREATE TABLE IF NOT EXISTS predictions (
             id INT AUTO_INCREMENT PRIMARY KEY,
             patient_id INT,
@@ -34,66 +42,56 @@ def init_db():
             timestamp DATETIME,
             FOREIGN KEY (patient_id) REFERENCES patients(id)
         )
-    ''')
+        '''
+    ]
+    for query in create_tables:
+        execute_query(query)
 
-    conn.commit()
-    conn.close()
 
 def get_or_create_patient(name, dob):
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    cursor.execute("SELECT id FROM patients WHERE name = %s AND dob = %s", (name, dob))
-    result = cursor.fetchone()
+    select_query = "SELECT id FROM patients WHERE name = %s AND dob = %s"
+    result = execute_query(select_query, (name, dob), fetch=True)
     if result:
-        patient_id = result[0]
-    else:
-        cursor.execute("INSERT INTO patients (name, dob) VALUES (%s, %s)", (name, dob))
-        conn.commit()
-        patient_id = cursor.lastrowid
-    conn.close()
-    return patient_id
+        return result[0][0]
+
+    insert_query = "INSERT INTO patients (name, dob) VALUES (%s, %s)"
+    return execute_query(insert_query, (name, dob))
+
 
 def save_prediction(data: dict, prediction: int):
-    conn = get_db_connection()
-    cursor = conn.cursor()
     patient_id = get_or_create_patient(data["name"], data["dob"])
-
-    cursor.execute('''
+    insert_query = '''
         INSERT INTO predictions (
             patient_id, gender, age, hypertension, heart_disease,
             smoking_history, bmi, HbA1c_level, blood_glucose_level,
             prediction, timestamp
         ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-    ''', (
-        patient_id, data["gender"], data["age"], data["hypertension"], data["heart_disease"],
-        data["smoking_history"], data["bmi"], data["HbA1c_level"], data["blood_glucose_level"],
+    '''
+    params = (
+        patient_id, data["gender"], data["age"], data["hypertension"],
+        data["heart_disease"], data["smoking_history"], data["bmi"],
+        data["HbA1c_level"], data["blood_glucose_level"],
         prediction, datetime.now()
-    ))
-    conn.commit()
-    conn.close()
+    )
+    execute_query(insert_query, params)
+
 
 def get_predictions_from_db():
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    cursor.execute('''
+    query = '''
         SELECT p.id, pt.name, pt.dob, p.age, p.gender, p.bmi, p.blood_glucose_level,
                p.HbA1c_level, p.prediction, p.timestamp
         FROM predictions p
         JOIN patients pt ON p.patient_id = pt.id
         ORDER BY p.timestamp DESC
         LIMIT 4
-    ''')
-    predictions = cursor.fetchall()
-    conn.close()
-    return predictions
+    '''
+    return execute_query(query, fetch=True)
+
 
 def delete_all_predictions():
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    cursor.execute("DELETE FROM predictions")
-    cursor.execute("DELETE FROM patients")
-    conn.commit()
-    conn.close()
+    execute_query("DELETE FROM predictions")
+    execute_query("DELETE FROM patients")
 
-# Khởi tạo DB khi import file
+
+# Khởi tạo cơ sở dữ liệu khi file được import
 init_db()
