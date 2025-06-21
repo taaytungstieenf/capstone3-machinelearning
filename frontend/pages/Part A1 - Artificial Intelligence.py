@@ -151,7 +151,30 @@ with colDL:
 
 st.markdown("""### 6. Differences between Machine Learning and Deep Learning""")
 st.markdown("""
-    <table style="width:100%; border-collapse: collapse;" border="1">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        thead {
+            background-color: #f2f2f2;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+            word-wrap: break-word;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+
+    <table>
         <thead>
             <tr>
                 <th>Characteristic</th>
@@ -203,6 +226,7 @@ st.markdown("""
         </tbody>
     </table>
 """, unsafe_allow_html=True)
+
 
 image2 = Image.open("../images/MLvsDL.jpg")
 st.markdown(

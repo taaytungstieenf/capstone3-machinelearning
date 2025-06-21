@@ -92,43 +92,72 @@ st.markdown("""### 2. Introduction to Boosting""")
 col3, col4 = st.columns([1.5,1])
 with col3:
     st.markdown("""
-    ##### a. General Concept of Boosting
-    - Boosting = combine the strength of many weak models → into a strong model.
-    - Instead of training 1 large model → train many small models in succession, each one corrects the previous one.
-    ##### b. How it works
-    - Initially, the model predicts incorrectly → calculates the error → the next model learns on that error.
-    - This process is repeated in the direction of gradually reducing the overall error of the model.
-    ##### c. Common Boosting Models
-    <table style="width:100%; border-collapse: collapse;" border="1">
-        <thead>
-            <tr>
-                <th>Algorithm</th>
-                <th>Characteristic</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>AdaBoost</td>
-                <td>The following model focuses on the more difficult points.</td>
-            </tr>
-            <tr>
-                <td>Gradient Boosting</td>
-                <td>The following model optimizes the error according to the gradient.</td>
-            </tr>
-            <tr>
-                <td>LightGBM</td>
-                <td>Use histogram, very fast, good for large data.</td>
-            </tr>
-            <tr>
-                <td>CatBoost</td>
-                <td>Good for categorical data.</td>
-            </tr>
-            <tr>
-                <td>XGBoost</td>
-                <td>Balance between speed and accuracy, and very strong.</td>
-            </tr>
-        </tbody>
-    </table>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            thead {
+                background-color: #f2f2f2;
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 12px;
+                text-align: left;
+                vertical-align: top;
+                word-wrap: break-word;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            tr:hover {
+                background-color: #f1f1f1;
+            }
+        </style>
+
+        <h5>a. General Concept of Boosting</h5>
+        <ul>
+            <li>Boosting = combine the strength of many weak models → into a strong model.</li>
+            <li>Instead of training one large model, it trains many small models in succession — each one correcting the previous.</li>
+        </ul>
+
+        <h5>b. How it works</h5>
+        <ul>
+            <li>The initial model makes errors → the next model focuses on these errors.</li>
+            <li>This continues iteratively to reduce overall error.</li>
+        </ul>
+
+        <h5>c. Common Boosting Models</h5>
+        <table>
+            <thead>
+                <tr>
+                    <th>Algorithm</th>
+                    <th>Characteristic</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>AdaBoost</td>
+                    <td>The following model focuses on the more difficult points.</td>
+                </tr>
+                <tr>
+                    <td>Gradient Boosting</td>
+                    <td>The following model optimizes the error according to the gradient.</td>
+                </tr>
+                <tr>
+                    <td>LightGBM</td>
+                    <td>Uses histogram-based algorithm, very fast, and good for large datasets.</td>
+                </tr>
+                <tr>
+                    <td>CatBoost</td>
+                    <td>Performs well on categorical data, often with little preprocessing.</td>
+                </tr>
+                <tr>
+                    <td>XGBoost</td>
+                    <td>Balanced in speed and accuracy; highly regularized and widely used in competitions.</td>
+                </tr>
+            </tbody>
+        </table>
     """, unsafe_allow_html=True)
 
 with col4:

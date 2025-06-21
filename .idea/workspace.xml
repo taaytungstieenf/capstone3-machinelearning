@@ -5,39 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b564f29-4f79-45da-bd54-00d80daa3421" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/HOME.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/Part A1 - Artificial Intelligence.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/Part A2 - Diabetes Information.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/Part B1 - Machine Learning.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/Part B2 - Machine Learning for Project.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/Part C1 - Deep Learning.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/Part C2 - Deep Learning for Project.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/Part D1 - Datasets Introduction.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/Part E2 - DL Model Evaluation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/Part G1 - Chatbot for Diabetes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/Part G2 - Medical Articles.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/assessment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/introduction.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boosting_models/catboost_info/catboost_training.json" beforeDir="false" afterPath="$PROJECT_DIR$/boosting_models/catboost_info/catboost_training.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boosting_models/catboost_info/learn/events.out.tfevents" beforeDir="false" afterPath="$PROJECT_DIR$/boosting_models/catboost_info/learn/events.out.tfevents" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boosting_models/catboost_info/time_left.tsv" beforeDir="false" afterPath="$PROJECT_DIR$/boosting_models/catboost_info/time_left.tsv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boosting_models/catboost_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/boosting_models/catboost_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boosting_models/lightgbm_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/boosting_models/lightgbm_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boosting_models/metrics/catboost_metrics.csv" beforeDir="false" afterPath="$PROJECT_DIR$/boosting_models/metrics/catboost_metrics.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boosting_models/metrics/lightgbm_metrics.csv" beforeDir="false" afterPath="$PROJECT_DIR$/boosting_models/metrics/lightgbm_metrics.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boosting_models/metrics/xgboost_metrics.csv" beforeDir="false" afterPath="$PROJECT_DIR$/boosting_models/metrics/xgboost_metrics.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boosting_models/models/catboost_model.cbm" beforeDir="false" afterPath="$PROJECT_DIR$/boosting_models/models/catboost_model.cbm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boosting_models/xgboost_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/boosting_models/xgboost_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/database_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/database_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/database_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/database_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/Home.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/Part A - Dataset Introduction.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/Part B - Exploratory Data Analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/Part D2 - Exploratory Data Analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/Part C - Boosting Models Comparison.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/Part E1 - ML Model Evaluation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/Part D - Diabetic Risk Assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/Part F1 - Diabetic Risk Assessment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/Part E - Personal Metrics Visualization.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/Part F2 - Metrics Visualization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/Part A1 - Artificial Intelligence.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/Part A1 - Artificial Intelligence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/Part B1 - Machine Learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/Part B1 - Machine Learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/Part B2 - Machine Learning for Project.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/Part B2 - Machine Learning for Project.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/Part C1 - Deep Learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/Part C1 - Deep Learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/Part C2 - Deep Learning for Project.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/Part C2 - Deep Learning for Project.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -352,7 +325,15 @@
       <workItem from="1749877872072" duration="5481000" />
       <workItem from="1749932295067" duration="5703000" />
       <workItem from="1749981169154" duration="784000" />
-      <workItem from="1750038507148" duration="22770000" />
+      <workItem from="1750038507148" duration="23483000" />
+      <workItem from="1750084920112" duration="1410000" />
+      <workItem from="1750144741477" duration="1196000" />
+      <workItem from="1750170177794" duration="24000" />
+      <workItem from="1750300712387" duration="11469000" />
+      <workItem from="1750346894523" duration="1392000" />
+      <workItem from="1750393880103" duration="9325000" />
+      <workItem from="1750430728827" duration="903000" />
+      <workItem from="1750474966523" duration="878000" />
     </task>
     <servers />
   </component>
@@ -383,7 +364,7 @@
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$project_app.coverage" NAME="project_app Coverage Results" MODIFIED="1745119909809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$orthers_KNN.coverage" NAME="orthers_KNN Coverage Results" MODIFIED="1745031879667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$projectModel.coverage" NAME="projectModel Coverage Results" MODIFIED="1745128244153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/capstone3_machinelearning$main.coverage" NAME="main Coverage Results" MODIFIED="1749861631430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/capstone3_machinelearning$main.coverage" NAME="main Coverage Results" MODIFIED="1750474976389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$decisiontree_model.coverage" NAME="decisiontree_model Coverage Results" MODIFIED="1744563337347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$logisticregression_model.coverage" NAME="logisticregression_model Coverage Results" MODIFIED="1744975917238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstone3_machinelearning$Visualization.coverage" NAME="Visualization Coverage Results" MODIFIED="1746778110095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend/pages" />

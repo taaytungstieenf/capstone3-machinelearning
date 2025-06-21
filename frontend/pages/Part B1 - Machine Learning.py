@@ -86,7 +86,6 @@ with col1:
 
     st.markdown("""**Basic formula:**""")
     st.latex(r"y = w_1 x_1 + w_2 x_2 + \ldots + w_n x_n + b")
-
     st.latex(r"w_i: \text{weight to learn}")
     st.latex(r"x_i: \text{input variable}")
     st.latex(r"b: \text{bias}")
